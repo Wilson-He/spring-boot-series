@@ -1,0 +1,25 @@
+swagger:
+  docket:
+    base-package: io.github
+    produces: application/json
+  enabled: true
+
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: tiger
+    username: root
+    url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    name: db-test
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  type-aliases-package: io.github.mybatis.generate.entity
+  mapper-locations: classpath*:/mappers/*.xml
+  configuration:
+    database-id: db-test
