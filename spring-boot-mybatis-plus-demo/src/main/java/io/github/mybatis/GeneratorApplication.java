@@ -22,7 +22,7 @@ public class GeneratorApplication {
                 // 设置全局配置
                 .setGlobalConfig(globalConfig(path, "Wilson"))
                 // 设置各层文件的生成目录
-                .setPackageInfo(packageConfig("io.github.mybatis.generate"))
+                .setPackageInfo(packageConfig("io.github.webflux"))
                 // 策略配置项
                 .setStrategy(strategyConfig())
                 // 选择模板引擎
@@ -35,8 +35,8 @@ public class GeneratorApplication {
 
     private static PackageConfig packageConfig(String basePackage) {
         return new PackageConfig()
-                .setMapper("dao")
-                .setXml("mappers")
+//                .setMapper("infrastructure.repository")
+//                .setXml("mappers")
                 // 设置所有生成所在的根包
                 .setParent(basePackage);
     }
@@ -54,7 +54,7 @@ public class GeneratorApplication {
                 // 命名下划线转驼峰式
                 .setNaming(NamingStrategy.underline_to_camel)
                 // 设置只生成指定表的entity、mapper... exclude则设置不生成的表
-                .setInclude("user_base")
+//                .setInclude("user_base")
                 // 生成的entity是否使用lombok注解
                 .setEntityLombokModel(true)
                 // 使用@RestController而非@Controller

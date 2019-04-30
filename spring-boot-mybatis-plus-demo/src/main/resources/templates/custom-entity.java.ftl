@@ -1,47 +1,66 @@
 package ${package.Entity};
+
 <#list table.importPackages as pkg>
-import ${pkg};
+    import ${pkg};
 </#list>
-import com.alibaba.fastjson.annotation.JSONField;
+<#if swagger2>
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.ToString;
+</#if>
 <#if entityLombokModel>
-import com.baomidou.mybatisplus.annotations.Version;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 </#if>
+import ${package.Mapper}.${table.mapperName};
 
-/**<#if table.comment??>${"\n"} * <p>
- * ${table.comment}
- * </p>
- * </#if>
- * @author ${author}
- * @since ${date}
- */
-@ToString
-@Setter
-@Getter
+/**
+* <p>
+* ${table.comment!}
+* </p>
+*
+* @author ${author}
+* @since ${date}
+*/
+<#if entityLombokModel>
+@Data
+    <#if superEntityClass??>
+ @EqualsAndHashCode(callSuper = true)
+    <#else>
+@EqualsAndHashCode(callSuper = false)
+    </#if>
 @Accessors(chain = true)
+</#if>
 <#if table.convert>
-@TableName("${table.name}")
+    @TableName("${table.name}")
 </#if>
-@ApiModel("<#if table.comment??>${table.comment}</#if>")
+<#if swagger2>
+    @ApiModel(value="${entity}对象", description="${table.comment!}")
+</#if>
 <#if superEntityClass??>
-public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
+    public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
 <#elseif activeRecord>
-public class ${entity} extends Model<${entity}> {
+    public class ${entity} extends Model<${entity}> {
 <#else>
-public class ${entity} implements Serializable {
+    public class ${entity} implements Serializable {
 </#if>
+
+    private static final long serialVersionUID = 1L;
 <#-- ----------  BEGIN 字段循环遍历  ---------->
 <#list table.fields as field>
     <#if field.keyFlag>
         <#assign keyPropertyName="${field.propertyName}"/>
     </#if>
 
+    <#if field.comment!?length gt 0>
+        <#if swagger2>
+            @ApiModelProperty(value = "${field.comment}")
+        <#else>
+    /**
+     * ${field.comment}
+     */
+        </#if>
+    </#if>
     <#if field.keyFlag>
     <#-- 主键 -->
         <#if field.keyIdentityFlag>
@@ -60,21 +79,20 @@ public class ${entity} implements Serializable {
     @TableField(fill = FieldFill.${field.fill})
         </#if>
     <#elseif field.convert>
-    @TableField("${field.name}")
+        @TableField("${field.name}")
     </#if>
 <#-- 乐观锁注解 -->
-    <#if versionFieldName?? && versionFieldName == field.name>
+    <#if (versionFieldName!"") == field.name>
     @Version
     </#if>
 <#-- 逻辑删除注解 -->
-    <#if logicDeleteFieldName?? && logicDeleteFieldName == field.name >
+    <#if (logicDeleteFieldName!"") == field.name>
     @TableLogic
-    @JSONField(serialize = false)
     </#if>
-    @ApiModelProperty(<#if logicDeleteFieldName?? && logicDeleteFieldName == field.name >value = "<#if field.comment??>${field.comment}</#if>", hidden = true<#else >"<#if field.comment??>${field.comment}</#if>"</#if>)
     private ${field.propertyType} ${field.propertyName};
 </#list>
 <#------------  END 字段循环遍历  ---------->
+
 <#if !entityLombokModel>
     <#list table.fields as field>
         <#if field.propertyType == "boolean">
@@ -82,28 +100,25 @@ public class ${entity} implements Serializable {
         <#else>
             <#assign getprefix="get"/>
         </#if>
-
-    public ${field.propertyType} ${getprefix}${field.capitalName}() {
+        public ${field.propertyType} ${getprefix}${field.capitalName}() {
         return ${field.propertyName};
-    }
+        }
 
         <#if entityBuilderModel>
-    public ${entity} set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
+            public ${entity} set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
         <#else>
-    public void set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
+            public void set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
         </#if>
         this.${field.propertyName} = ${field.propertyName};
         <#if entityBuilderModel>
-        return this;
+            return this;
         </#if>
-    }
+        }
     </#list>
 </#if>
-
 <#if entityColumnConstant>
     <#list table.fields as field>
-    public static final String ${field.name?upper_case} = "${field.name}";
-
+        public static final String ${field.name?upper_case} = "${field.name}";
     </#list>
 </#if>
 <#if activeRecord>
@@ -112,9 +127,9 @@ public class ${entity} implements Serializable {
     <#if keyPropertyName??>
         return this.${keyPropertyName};
     <#else>
-        return this.id;
+        return null;
     </#if>
     }
-
 </#if>
+    private ${table.mapperName} repository;
 }

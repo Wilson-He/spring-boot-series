@@ -54,6 +54,11 @@
             <artifactId>beetl</artifactId>
             <version>2.9.9</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>generator-enhance</artifactId>
+            <version>0.0.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: test
+#swagger:
+#  enabled: true
+#  docket:
+#    base-package: io.github

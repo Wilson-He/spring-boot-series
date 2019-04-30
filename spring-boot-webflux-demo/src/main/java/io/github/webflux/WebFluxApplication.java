@@ -1,4 +1,4 @@
-package io.github.mybatis;
+package io.github.webflux;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author: Wilson
- * @date: 2019/4/22
+ * @date: 2019/4/28
  **/
 @SpringBootApplication
-@MapperScan(basePackages = "io.github.mybatis.generate.mapper")
-public class MybatisPlusApplication {
+@MapperScan("io.github.webflux.mapper")
+public class WebFluxApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MybatisPlusApplication.class);
+        SpringApplication.run(WebFluxApplication.class);
     }
 }
