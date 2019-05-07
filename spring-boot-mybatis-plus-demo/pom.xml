@@ -25,11 +25,11 @@
             <artifactId>swagger2-spring-boot-starter</artifactId>
             <version>1.0.3.RELEASE</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
             <version>${mybatis-plus.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>generator-enhance</artifactId>
-            <version>0.0.1.RELEASE</version>
+            <version>0.3.2</version>
         </dependency>
     </dependencies>
 

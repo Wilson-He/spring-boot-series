@@ -12,6 +12,7 @@
       <module>spring-boot-mybatis-plus-demo</module>
       <module>spring-boot-webflux-demo</module>
       <module>spring-boot-mongodb-reactive-demo</module>
+      <module>spring-boot-test</module>
   </modules>
   <packaging>pom</packaging>
 
