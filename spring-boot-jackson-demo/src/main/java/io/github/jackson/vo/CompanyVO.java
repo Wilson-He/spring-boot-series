@@ -1,6 +1,5 @@
 package io.github.jackson.vo;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -15,7 +14,6 @@ import java.util.Date;
  */
 @Data
 @Accessors(chain = true)
-@JsonAutoDetect
 public class CompanyVO {
     private String companyName;
     @JsonFormat

@@ -29,7 +29,7 @@ public class GeneratorApplication {
                 .setTemplateEngine(new FreemarkerTemplateEngine())
                 // 设置文件模板路径,默认mybatis-plus-generator的templates目录下的模板文件,设为空则不生成对应目录及文件,如下不生成controller目录与文件
                 // 自定义模板文件名不能与默认templates下的模板同名(仅大小写不同也会报模板找不到)
-                .setTemplate(new TemplateConfig().setController(null).setEntity("/templates/custom-entity.java"))
+                .setTemplateConfig(new TemplateConfig().setController(null).setEntity("/templates/custom-entity.java"))
                 .execute();
     }
 

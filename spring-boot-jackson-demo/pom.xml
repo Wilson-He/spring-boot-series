@@ -21,6 +21,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- swagger自动配置依赖,为方便测试 -->
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>swagger2-spring-boot-starter</artifactId>
