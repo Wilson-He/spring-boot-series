@@ -6,6 +6,9 @@ import io.github.webflux.service.ProductService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
 /**
  * <p>
  * 服务实现类
@@ -16,5 +19,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> implements ProductService {
+    @Resource
+    private ProductMapper productMapper;
 
+    @PostConstruct
+    public void init() {
+        productMapper.deleteById(1);
+    }
 }

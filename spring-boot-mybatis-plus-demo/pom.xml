@@ -58,7 +58,18 @@
             <groupId>io.github.wilson-he</groupId>
             <artifactId>generator-enhance</artifactId>
             <version>0.3.2</version>
+            <scope>compile</scope>
         </dependency>
+        <!--       <dependency>
+                   <groupId>io.github.wilson-he</groupId>
+                   <artifactId>generator-enhance</artifactId>
+                   <version>0.3.3</version>
+               </dependency>-->
+<!--        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.5</version>
+        </dependency>-->
     </dependencies>
 
 </project>

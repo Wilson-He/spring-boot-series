@@ -36,9 +36,8 @@
             <version>1.0.3.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>web-boot-validation</artifactId>
-            <version>1.0.0.RELEASE</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
