@@ -13,7 +13,6 @@
     <packaging>war</packaging>
 
     <name>spring-boot-test Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -30,12 +29,10 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>generator-enhance</artifactId>
-            <version>0.3.2</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -44,11 +41,6 @@
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>swagger2-spring-boot-starter</artifactId>
-            <version>1.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
         </dependency>
     </dependencies>
 

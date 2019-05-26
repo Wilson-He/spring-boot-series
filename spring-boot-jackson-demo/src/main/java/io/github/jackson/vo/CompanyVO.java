@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 import java.util.Date;
 
 /**
- * UserVO
+ * CompanyVO
  *
  * @author Wilson
  * @date 2019/4/21
@@ -19,8 +19,4 @@ public class CompanyVO {
     @JsonFormat
     private Date createTime;
     private Integer employeeNum;
-
-    public String getName(){
-        return "getName";
-    }
 }

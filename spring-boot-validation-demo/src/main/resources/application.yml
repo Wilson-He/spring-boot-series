@@ -2,3 +2,10 @@ swagger:
   docket:
     base-package: io.github.validation
   enabled: true
+
+web:
+  common:
+    validation:
+      msg-locale: zh_CN
+      msg-key: msg
+      code-key: code
