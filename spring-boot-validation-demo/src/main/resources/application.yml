@@ -1,0 +1,4 @@
+swagger:
+  docket:
+    base-package: io.github.validation
+  enabled: true
