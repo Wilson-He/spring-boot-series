@@ -12,5 +12,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-04-22
  */
 public interface UserBaseService extends IService<UserBase> {
+     UserBase lockSelect(Integer id);
+
+    void insertList();
 
 }
