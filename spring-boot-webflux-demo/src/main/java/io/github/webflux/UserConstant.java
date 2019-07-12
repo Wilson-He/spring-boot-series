@@ -1,6 +1,7 @@
 package io.github.webflux;
 
-import java.util.EnumSet;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @author: Wilson
@@ -9,6 +10,8 @@ import java.util.EnumSet;
 public interface UserConstant {
     String OR = "||";
 
+    @AllArgsConstructor
+    @Getter
     enum IsDelete {
         /**
          * 已删除
@@ -17,10 +20,6 @@ public interface UserConstant {
         NO("0");
         private String value;
         public static final String PATTERN = YES.value + OR + NO.value;
-
-        IsDelete(String value) {
-            this.value = value;
-        }
 
         public String value() {
             return value;

@@ -11,10 +11,6 @@
 
     <artifactId>spring-boot-mybatis-plus-demo</artifactId>
 
-    <properties>
-        <mybatis-plus.version>3.1.0</mybatis-plus.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -23,53 +19,19 @@
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>swagger2-spring-boot-starter</artifactId>
-            <version>1.0.3.RELEASE</version>
         </dependency>
-<!--        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.28</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.ibeetl</groupId>
-            <artifactId>beetl</artifactId>
-            <version>2.9.9</version>
-        </dependency>
-        <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>generator-enhance</artifactId>
-            <version>0.3.2</version>
-            <scope>compile</scope>
         </dependency>
-        <!--       <dependency>
-                   <groupId>io.github.wilson-he</groupId>
-                   <artifactId>generator-enhance</artifactId>
-                   <version>0.3.3</version>
-               </dependency>-->
-<!--        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.5</version>
-        </dependency>-->
     </dependencies>
 
 </project>

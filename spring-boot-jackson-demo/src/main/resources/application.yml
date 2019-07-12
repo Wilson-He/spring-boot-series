@@ -1,48 +1,9 @@
 spring:
   jackson:
-    # 设置属性命名策略,对应jackson下PropertyNamingStrategy中的常量值，SNAKE_CASE-返回的json驼峰式转下划线，json body下划线传到后端自动转驼峰式
+    # 常用请求与响应自动转下划线，空值字段不传输
     property-naming-strategy: SNAKE_CASE
-    # 全局设置@JsonFormat的格式pattern
-    date-format: yyyy-MM-dd HH:mm:ss
-    # 当地时区
-    locale: zh
-    # 设置全局时区
-    time-zone: GMT+8
-    # 常用，全局设置pojo或被@JsonInclude注解的属性的序列化方式,NON_NULL-不为空的属性才会序列化,具体属性可看JsonInclude.Include
-    default-property-inclusion: NON_NULL
-
-    # 常规默认,枚举类SerializationFeature中的枚举属性为key，值为boolean设置jackson序列化特性,具体key请看SerializationFeature源码
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: true # 返回的java.util.date转换成timestamp
-      FAIL_ON_EMPTY_BEANS: true # 对象为空时是否报错，默认true
-    # 枚举类DeserializationFeature中的枚举属性为key，值为boolean设置jackson反序列化特性,具体key请看DeserializationFeature源码
-    deserialization:
-      # 常用,json中含pojo不存在属性时是否失败报错,默认true
-      FAIL_ON_UNKNOWN_PROPERTIES: false
-
-    # 枚举类MapperFeature中的枚举属性为key，值为boolean设置jackson ObjectMapper特性
-    # ObjectMapper在jackson中负责json的读写、json与pojo的互转、json tree的互转,具体特性请看MapperFeature,常规默认即可
-    mapper:
-      # 使用getter取代setter探测属性，如类中含getName()但不包含name属性与setName()，传输的vo json格式模板中依旧含name属性
-      USE_GETTERS_AS_SETTERS: true #默认false
-
-    # 枚举类JsonParser.Feature枚举类中的枚举属性为key，值为boolean设置jackson JsonParser特性
-    # JsonParser在jackson中负责json内容的读取,具体特性请看JsonParser.Feature，一般无需设置默认即可
-    parser:
-      ALLOW_SINGLE_QUOTES: true # 是否允许出现单引号,默认false
-    # 枚举类JsonGenerator.Feature枚举类中的枚举属性为key，值为boolean设置jackson JsonGenerator特性，一般无需设置默认即可
-    # JsonGenerator在jackson中负责编写json内容,具体特性请看JsonGenerator.Feature
-    generator:
-      # BigDecimal类型是否调用BigDecimal#toPlainString()方法进行写出,默认false
-      WRITE_BIGDECIMAL_AS_PLAIN: false
-
-    # 常规无需设置默认即可,枚举类PropertyAccessor中的枚举属性为key，值为JsonAutoDetect.Visibility枚举,设置jackson JsonGenerator特性
-    # PropertyAccessor:属性访问器，SETTER、GETTER、布尔IS_GETTER等访问设置
-    # JsonAutoDetect.Visibility:设置自动探测的可见度(ANY、NON_PRIVATE、PROTECTED_AND_PUBLIC等)
-    visibility:
-      ALL: DEFAULT
-
+    default-property-inclusion: non_null
 swagger:
-  enabled: true
   docket:
-    base-package: io.github
+    base-package: io.github.jackson
+  enabled: true
