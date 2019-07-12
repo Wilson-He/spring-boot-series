@@ -1,17 +1,14 @@
 package io.github.validation.vo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.github.validation.group.InsertGroup;
 import io.github.validation.group.UpdateGroup;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiParam;
 import lombok.Data;
+import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
 /**
@@ -20,6 +17,7 @@ import javax.validation.constraints.Positive;
  **/
 @Data
 @Valid
+@Accessors(chain = true)
 public class UserVO {
     @NotBlank(groups = UpdateGroup.class)
     private String id;

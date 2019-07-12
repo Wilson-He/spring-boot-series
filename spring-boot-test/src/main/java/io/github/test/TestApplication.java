@@ -1,14 +1,19 @@
 package io.github.test;
 
-import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
-import io.github.generator.factory.DefaultGeneratorConfigFactory;
+import io.github.test.domain.entity.UserBase;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import java.io.IOException;
-import java.util.Date;
+import java.net.*;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.LockSupport;
+import java.util.stream.IntStream;
 
 /**
  * @author: Wilson
@@ -18,29 +23,25 @@ import java.util.Date;
 @MapperScan("io.github.test.mapper")
 public class TestApplication {
     public static void main(String[] args) {
-//        System.out.println(System.currentTimeMillis());
-//        generate();
-        SpringApplication.run(TestApplication.class);
+        SpringApplication.run(TestApplication.class, args);
     }
 
-    @Bean
-    public PerformanceInterceptor performanceInterceptor(){
-        return new PerformanceInterceptor();
+    public static void schedule() {
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
+        executorService.schedule(() -> System.out.println("schedule delay 5s"), 3, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(() -> System.out.println("schedule delay 5s"), 2L,
+                2L, TimeUnit.SECONDS);
+        executorService.shutdown();
     }
 
-    public static void generate() {
-        try {
-            DefaultGeneratorConfigFactory.defaultAutoGenerator("application.yml", "io.github.test")
-                    .getGlobalConfig()
-                    .setBaseResultMap(true)
-                    .backGenerator()
-                    .getTemplateConfig()
-                    .setEntity("templates/custom-entity.java.ftl")
-                    .excludeController()
-                    .backGenerator()
-                    .execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void reference() {
+        UserBase userBaseA = new UserBase().setId(11);
+        AtomicReference<UserBase> reference = new AtomicReference<>(userBaseA);
+        userBaseA.setId(15);
+        UserBase userBaseB = new UserBase().setId(111);
+        System.out.println(reference.get());
+        reference.compareAndSet(userBaseA, userBaseB);
+        System.out.println(reference.get());
     }
+
 }

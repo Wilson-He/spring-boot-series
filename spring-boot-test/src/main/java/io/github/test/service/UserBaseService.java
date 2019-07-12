@@ -12,5 +12,9 @@ import io.github.test.domain.entity.UserBase;
  * @since 2019-05-07
  */
 public interface UserBaseService extends IService<UserBase> {
-
+    /**
+     *
+     * @return
+     */
+    Object addTransaction();
 }

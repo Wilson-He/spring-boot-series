@@ -27,7 +27,6 @@ public class UserControllerTest {
                 .get().uri("/user/")
                 .exchange()
                 .flatMapMany(clientResponse -> clientResponse.bodyToFlux(User.class))
-                .doOnNext(System.err::println)
                 .take(1)
                 .subscribe();
         Thread.sleep(200);

@@ -1,9 +1,3 @@
-swagger:
-  docket:
-    base-package: io.github
-    produces: application/json
-  enabled: true
-
 spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
@@ -17,8 +11,16 @@ spring:
   http:
     converters:
       preferred-json-mapper: jackson
+  profiles:
+    active: dev
 
 mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+
+swagger:
+  docket:
+    base-package: io.github
+    produces: application/json
+  enabled: true

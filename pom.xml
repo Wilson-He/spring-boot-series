@@ -15,6 +15,7 @@
         <module>spring-boot-test</module>
         <module>spring-cloud-eureka</module>
         <module>spring-boot-validation-demo</module>
+        <module>spring-mybatis-plus-ds</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -40,9 +41,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.57</version>
         </dependency>
     </dependencies>
 

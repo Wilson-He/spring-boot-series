@@ -12,5 +12,5 @@ import io.github.test.domain.entity.UserDetail;
  * @since 2019-05-07
  */
 public interface UserDetailService extends IService<UserDetail> {
-
+    void add();
 }

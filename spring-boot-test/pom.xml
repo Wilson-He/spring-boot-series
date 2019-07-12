@@ -20,7 +20,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <swagger.version>3.0.0-SNAPSHOT</swagger.version>
     </properties>
+
+
+    <repositories>
+        <repository>
+            <id>jcenter-snapshots</id>
+            <name>jcenter</name>
+            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -31,11 +41,6 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>generator-enhance</artifactId>
-            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -49,6 +54,21 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+            <version>4.1.33.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>web-boot-validation</artifactId>
+            <version>1.0.0.RELEASE</version>
         </dependency>
     </dependencies>
 

@@ -1,15 +1,13 @@
 package io.github.test.controller;
 
 
-import io.github.test.domain.entity.UserBase;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import io.github.test.service.UserBaseService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -22,8 +20,21 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/userBase")
 public class UserBaseController {
+    @Resource
+    private UserBaseService userBaseService;
+
     @PostMapping("/")
-    public Object add(@RequestBody UserBase userBase) {
-        return userBase;
+    public Object add() {
+        return userBaseService.addTransaction();
+    }
+
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+
+    @PostMapping("/post")
+    public String listPost() {
+        return "post";
     }
 }
