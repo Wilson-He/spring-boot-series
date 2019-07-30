@@ -1,8 +1,8 @@
 package io.github.ds.service.impl;
 
+import io.github.ds.domain.entity.UserBase;
 import io.github.ds.ds.DataSource;
 import io.github.ds.ds.DataSourceType;
-import io.github.ds.domain.entity.UserBase;
 import io.github.ds.mapper.UserBaseMapper;
 import io.github.ds.service.UserBaseService;
 import org.springframework.stereotype.Service;

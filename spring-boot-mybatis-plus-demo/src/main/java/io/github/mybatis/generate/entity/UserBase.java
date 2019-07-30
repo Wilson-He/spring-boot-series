@@ -2,16 +2,16 @@ package io.github.mybatis.generate.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Wilson
@@ -48,13 +48,13 @@ public class UserBase implements Serializable {
     @Override
     public String toString() {
         return "UserBase{" +
-        "id=" + id +
-        ", username=" + username +
-        ", password=" + password +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDelete=" + isDelete +
-        ", status=" + status +
-        "}";
+                "id=" + id +
+                ", username=" + username +
+                ", password=" + password +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isDelete=" + isDelete +
+                ", status=" + status +
+                "}";
     }
 }

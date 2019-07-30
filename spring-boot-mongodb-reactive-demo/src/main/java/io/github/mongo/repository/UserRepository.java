@@ -10,13 +10,12 @@ import reactor.core.publisher.Mono;
  **/
 public interface UserRepository extends ReactiveCrudRepository<User, String> {
     /**
-     *
      * @param username
      * @return
      */
     Mono<User> findByUsername(String username);
+
     /**
-     *
      * @param username
      * @return
      */

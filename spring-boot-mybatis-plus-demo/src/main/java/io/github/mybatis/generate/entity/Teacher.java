@@ -1,11 +1,12 @@
 package io.github.mybatis.generate.entity;
 
 import com.baomidou.mybatisplus.annotation.TableLogic;
+
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Wilson
@@ -50,9 +51,9 @@ public class Teacher implements Serializable {
     @Override
     public String toString() {
         return "Teacher{" +
-        "id=" + id +
-        ", name=" + name +
-        ", isDelete=" + isDelete +
-        "}";
+                "id=" + id +
+                ", name=" + name +
+                ", isDelete=" + isDelete +
+                "}";
     }
 }

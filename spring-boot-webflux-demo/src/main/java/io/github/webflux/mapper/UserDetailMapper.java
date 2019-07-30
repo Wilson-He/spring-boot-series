@@ -1,7 +1,7 @@
 package io.github.webflux.mapper;
 
-import io.github.webflux.entity.UserDetail;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import io.github.webflux.entity.UserDetail;
 
 /**
  * <p>

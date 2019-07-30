@@ -1,13 +1,11 @@
 package io.github.mybatis.generate.mapper;
 
-import io.github.mybatis.generate.entity.UserBase;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-
-import java.util.List;
+import io.github.mybatis.generate.entity.UserBase;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author Wilson

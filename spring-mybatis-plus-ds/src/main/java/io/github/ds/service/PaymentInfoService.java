@@ -8,8 +8,8 @@ import java.util.List;
  * <p>
  * PaymentInfo-缴费记录表业务接口
  * </p>
- * 
- * @author 
+ *
+ * @author
  * @since 2019-07-11
  */
 public interface PaymentInfoService {

@@ -1,9 +1,9 @@
 package io.github.webflux.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.github.webflux.entity.ProductSpecInventory;
 import io.github.webflux.mapper.ProductSpecInventoryMapper;
 import io.github.webflux.service.ProductSpecInventoryService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

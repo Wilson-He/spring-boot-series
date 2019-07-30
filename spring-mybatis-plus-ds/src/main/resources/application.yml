@@ -4,15 +4,15 @@ spring:
       #    url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       #    url: jdbc:mysql://localhost:3306/order_module?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       #    username: root
-      #    password: tiger
+    #    password: tiger
     #      primary: master #设置默认的数据源或者数据源组,默认值即为master
     db1:
       url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-#      url: jdbc:mysql://10.16.18.111:3306/midea_mobile_party_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      #      url: jdbc:mysql://10.16.18.111:3306/midea_mobile_party_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       user: root
       password: tiger
     db2:
-#      url: jdbc:mysql://10.16.18.111:3306/midea_mobile_payment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      #      url: jdbc:mysql://10.16.18.111:3306/midea_mobile_payment?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       url: jdbc:mysql://localhost:3306/order_module?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       user: root
       password: tiger

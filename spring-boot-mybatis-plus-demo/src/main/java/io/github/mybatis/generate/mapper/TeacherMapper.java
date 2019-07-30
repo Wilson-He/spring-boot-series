@@ -1,11 +1,11 @@
 package io.github.mybatis.generate.mapper;
 
-import io.github.mybatis.generate.entity.Teacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import io.github.mybatis.generate.entity.Teacher;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author Wilson

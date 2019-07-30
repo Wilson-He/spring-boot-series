@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * 缴费记录表
  * </p>
  *
- * @author 
+ * @author
  * @since 2019-07-11
  */
 @Data
@@ -32,7 +32,7 @@ public class PaymentInfo implements Serializable {
 
     /**
      * 0：未缴费
-             1：已缴费
+     * 1：已缴费
      */
     private Integer payStatus;
 
@@ -67,7 +67,7 @@ public class PaymentInfo implements Serializable {
     private Integer projectCode;
 
     /**
-     *  在职状态：0：离职（3、4、5、6、7）
+     * 在职状态：0：离职（3、4、5、6、7）
      */
     private Integer jobStatus;
 

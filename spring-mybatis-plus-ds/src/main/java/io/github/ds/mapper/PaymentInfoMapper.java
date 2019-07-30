@@ -11,7 +11,7 @@ import java.util.List;
  * 缴费记录表 Mapper 接口
  * </p>
  *
- * @author 
+ * @author
  * @since 2019-07-11
  */
 public interface PaymentInfoMapper extends BaseMapper<PaymentInfo> {

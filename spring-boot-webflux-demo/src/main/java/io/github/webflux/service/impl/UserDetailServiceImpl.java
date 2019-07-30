@@ -1,9 +1,9 @@
 package io.github.webflux.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.github.webflux.entity.UserDetail;
 import io.github.webflux.mapper.UserDetailMapper;
 import io.github.webflux.service.UserDetailService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

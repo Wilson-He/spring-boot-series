@@ -1,12 +1,13 @@
 package io.github.mybatis.generate.entity;
 
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Wilson
@@ -91,13 +92,13 @@ public class UserDetail implements Serializable {
     @Override
     public String toString() {
         return "UserDetail{" +
-        "id=" + id +
-        ", sex=" + sex +
-        ", age=" + age +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDelete=" + isDelete +
-        ", userId=" + userId +
-        "}";
+                "id=" + id +
+                ", sex=" + sex +
+                ", age=" + age +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", isDelete=" + isDelete +
+                ", userId=" + userId +
+                "}";
     }
 }

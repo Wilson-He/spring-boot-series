@@ -2,7 +2,6 @@ package io.github.test.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.github.test.domain.entity.Product;
-import io.github.test.domain.entity.UserBase;
 import io.github.test.mapper.ProductMapper;
 import io.github.test.mapper.UserBaseMapper;
 import io.github.test.service.ProductService;

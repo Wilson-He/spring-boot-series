@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
  * @author: Wilson
  * @date: 2019/4/29
  **/
-public interface EventRepository extends ReactiveCrudRepository<ContinuousEvent,Long> {
+public interface EventRepository extends ReactiveCrudRepository<ContinuousEvent, Long> {
     @Tailable
     Flux<ContinuousEvent> findBy();
 }

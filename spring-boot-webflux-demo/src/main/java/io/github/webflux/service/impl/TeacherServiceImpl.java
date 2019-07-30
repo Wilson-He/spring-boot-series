@@ -1,9 +1,9 @@
 package io.github.webflux.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.github.webflux.entity.Teacher;
 import io.github.webflux.mapper.TeacherMapper;
 import io.github.webflux.service.TeacherService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

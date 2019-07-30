@@ -1,6 +1,5 @@
 package io.github.webflux.entity;
 
-import io.github.webflux.mapper.ProductMapper;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

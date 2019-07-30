@@ -1,11 +1,11 @@
 package io.github.mybatis.generate.entity;
 
-import java.math.BigDecimal;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Wilson
@@ -69,11 +69,11 @@ public class ProductSpec implements Serializable {
     @Override
     public String toString() {
         return "ProductSpec{" +
-        "id=" + id +
-        ", color=" + color +
-        ", price=" + price +
-        ", volume=" + volume +
-        ", productId=" + productId +
-        "}";
+                "id=" + id +
+                ", color=" + color +
+                ", price=" + price +
+                ", volume=" + volume +
+                ", productId=" + productId +
+                "}";
     }
 }

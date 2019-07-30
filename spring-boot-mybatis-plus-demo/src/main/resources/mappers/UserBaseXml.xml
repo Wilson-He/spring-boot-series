@@ -4,6 +4,8 @@
 
     <select id="lockSelect" resultType="io.github.mybatis.generate.entity.UserBase">
         select *
-        from user_base where id = #{id} for update;
+        from user_base
+        where id = #{id} for
+        update;
     </select>
 </mapper>

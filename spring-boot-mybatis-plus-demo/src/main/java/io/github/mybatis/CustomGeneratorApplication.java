@@ -20,7 +20,6 @@ public class CustomGeneratorApplication {
                 .backGenerator()
                 .getTemplateConfig()
                 // 不生成常量类
-                .excludeConstant()
                 // 不生成Controller类
                 .excludeController()
                 .backGenerator()

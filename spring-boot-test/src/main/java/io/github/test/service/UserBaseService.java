@@ -5,15 +5,14 @@ import io.github.test.domain.entity.UserBase;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
- * @author 
+ * @author
  * @since 2019-05-07
  */
 public interface UserBaseService extends IService<UserBase> {
     /**
-     *
      * @return
      */
     Object addTransaction();

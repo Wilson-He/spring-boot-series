@@ -14,5 +14,6 @@ import java.util.List;
  */
 public interface OrderBaseService {
     List<OrderBase> list();
+
     List<OrderBase> selectList();
 }

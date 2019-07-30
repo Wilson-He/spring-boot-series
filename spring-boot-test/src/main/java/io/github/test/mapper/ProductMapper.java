@@ -5,10 +5,10 @@ import io.github.test.domain.entity.Product;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
- * @author 
+ * @author
  * @since 2019-05-07
  */
 public interface ProductMapper extends BaseMapper<Product> {

@@ -1,7 +1,7 @@
 package io.github.webflux.service;
 
-import io.github.webflux.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import io.github.webflux.entity.Product;
 
 /**
  * <p>

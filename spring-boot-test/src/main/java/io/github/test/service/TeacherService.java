@@ -5,10 +5,10 @@ import io.github.test.domain.entity.Teacher;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
- * @author 
+ * @author
  * @since 2019-05-07
  */
 public interface TeacherService extends IService<Teacher> {

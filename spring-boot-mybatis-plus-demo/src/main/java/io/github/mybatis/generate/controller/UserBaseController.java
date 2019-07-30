@@ -1,10 +1,7 @@
 package io.github.mybatis.generate.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.github.mybatis.generate.entity.UserBase;
-import io.github.mybatis.generate.mapper.UserBaseMapper;
 import io.github.mybatis.generate.service.UserBaseService;
-import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +18,6 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/userBase")
-@Api
 public class UserBaseController {
     @Resource
     private UserBaseService userBaseService;

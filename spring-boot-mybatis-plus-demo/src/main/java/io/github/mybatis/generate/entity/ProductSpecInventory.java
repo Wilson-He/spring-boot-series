@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Wilson
@@ -48,9 +48,9 @@ public class ProductSpecInventory implements Serializable {
     @Override
     public String toString() {
         return "ProductSpecInventory{" +
-        "id=" + id +
-        ", specId=" + specId +
-        ", amount=" + amount +
-        "}";
+                "id=" + id +
+                ", specId=" + specId +
+                ", amount=" + amount +
+                "}";
     }
 }

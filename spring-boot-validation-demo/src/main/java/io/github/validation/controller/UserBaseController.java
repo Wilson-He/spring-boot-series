@@ -1,7 +1,6 @@
 package io.github.validation.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.validation.group.InsertGroup;
 import io.github.validation.group.UpdateGroup;

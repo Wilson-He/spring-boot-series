@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * UserBaseConstant
  *
- * @author 
+ * @author
  * @since 2019-05-07
  */
 public interface UserBaseConstant {

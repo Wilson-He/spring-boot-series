@@ -1,7 +1,7 @@
 package io.github.webflux.service;
 
-import io.github.webflux.entity.ProductSpecInventory;
 import com.baomidou.mybatisplus.extension.service.IService;
+import io.github.webflux.entity.ProductSpecInventory;
 
 /**
  * <p>

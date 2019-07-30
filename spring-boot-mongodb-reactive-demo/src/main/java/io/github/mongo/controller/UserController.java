@@ -8,7 +8,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
-import java.time.Duration;
 
 /**
  * @author: Wilson
@@ -21,7 +20,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/")
-    public Mono<User> save(@RequestBody User user){
+    public Mono<User> save(@RequestBody User user) {
         return userService.save(user);
     }
 

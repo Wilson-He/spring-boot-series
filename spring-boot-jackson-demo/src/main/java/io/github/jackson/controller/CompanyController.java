@@ -3,7 +3,6 @@ package io.github.jackson.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.jackson.vo.CompanyVO;
-import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -16,7 +15,6 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/company")
-@Api
 public class CompanyController {
     @Resource
     private ObjectMapper objectMapper;
