@@ -18,9 +18,3 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
-
-swagger:
-  docket:
-    base-package: io.github
-    produces: application/json
-  profiles: dev

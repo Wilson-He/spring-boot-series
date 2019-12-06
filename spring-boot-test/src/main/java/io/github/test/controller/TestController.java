@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.List;
@@ -31,6 +32,8 @@ public class TestController {
     private List<HttpMessageConverters> messageConverters;
     @Resource
     private Validator validator;
+    @Resource
+    private HttpServletRequest request;
 
     @PostMapping("/")
     public Object add(@RequestBody UserBase userBase) {
@@ -48,6 +51,7 @@ public class TestController {
 
     @PostMapping("/user")
     public String get(@RequestBody UserVO vo) {
+        System.err.println(request.getHeader("Authorization"));
         validate(new UserVO());
         return "index";
     }

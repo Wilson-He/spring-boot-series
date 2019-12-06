@@ -29,11 +29,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>generator-enhance</artifactId>
-            <version>0.3.5</version>
-        </dependency>
         <!--        <dependency>
                     <groupId>com.baomidou</groupId>
                     <artifactId>dynamic-datasource-spring-boot-starter</artifactId>

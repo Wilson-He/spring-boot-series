@@ -29,11 +29,6 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>generator-enhance</artifactId>
-            <version>0.3.6</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
@@ -45,4 +40,30 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.wilson-he</groupId>
+                <artifactId>generator-maven-plugin</artifactId>
+                <version>0.2.1</version>
+                <configuration>
+                    <basePackage>io.github.test</basePackage>
+                    <isCleanBefore>true</isCleanBefore>
+                    <dataSource>
+                        <url><![CDATA[jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false]]></url>
+                        <username>root</username>
+                        <password>tiger</password>
+                        <driverType>MYSQL</driverType>
+                    </dataSource>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

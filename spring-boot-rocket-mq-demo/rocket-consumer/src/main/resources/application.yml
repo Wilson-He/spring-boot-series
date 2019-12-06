@@ -1,0 +1,4 @@
+rocketmq:
+  name-server: 127.0.0.1:9876
+server:
+  port: 10000

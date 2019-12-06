@@ -1,5 +1,6 @@
 package io.github.mybatis.generate.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.github.mybatis.generate.entity.UserBase;
 import io.github.mybatis.generate.mapper.UserBaseMapper;
@@ -23,12 +24,6 @@ import java.util.List;
 public class UserBaseServiceImpl extends ServiceImpl<UserBaseMapper, UserBase> implements UserBaseService {
     @Resource
     private UserBaseMapper userBaseMapper;
-
-    @Override
-    public void insertList() {
-        List<UserBase> list = new ArrayList<>();
-        list.add(new UserBase().setUsername("aaa"));
-    }
 
     @Override
     @Transactional

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-boot-series</artifactId>
+        <groupId>io.github.wilson-he</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-boot-jwt-redis</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>swagger2-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.wilson-he</groupId>
+                <artifactId>generator-maven-plugin</artifactId>
+                <version>0.2.0</version>
+                <configuration>
+                    <basePackage>io.wilson.jwt</basePackage>
+                    <useSwagger>true</useSwagger>
+                    <idType>AUTO</idType>
+                    <dataSource>
+                        <url><![CDATA[jdbc:mysql://localhost:3306/spring_boot_series]]></url>
+                        <username>root</username>
+                        <password>tiger</password>
+                    </dataSource>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

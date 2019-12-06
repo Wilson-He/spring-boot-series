@@ -3,6 +3,8 @@ package io.github.mybatis.generate.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import io.github.mybatis.generate.entity.UserBase;
 
+import java.util.List;
+
 /**
  * <p>
  * 服务类
@@ -13,7 +15,5 @@ import io.github.mybatis.generate.entity.UserBase;
  */
 public interface UserBaseService extends IService<UserBase> {
     UserBase lockSelect(Integer id);
-
-    void insertList();
 
 }

@@ -17,6 +17,8 @@
         <module>spring-boot-validation-demo</module>
         <module>spring-mybatis-plus-ds</module>
         <module>spring-boot-data-mongodb-demo</module>
+        <module>spring-boot-rocket-mq-demo</module>
+        <module>spring-boot-jwt-redis</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -36,8 +38,8 @@
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-data.version>1.4.6.RELEASE</spring-data.version>
         <mybatis-plus.version>3.1.1</mybatis-plus.version>
-        <spring-boot-swagger.version>1.0.4</spring-boot-swagger.version>
-        <querydsl.version.version>4.2.1</querydsl.version.version>
+        <spring-boot-swagger.version>1.1.0</spring-boot-swagger.version>
+        <jwt.version>0.9.0</jwt.version>
     </properties>
 
     <dependencies>
@@ -46,15 +48,24 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.57</version>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>web-boot-validation</artifactId>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
 
-
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.57</version>
+            </dependency>
             <dependency>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>swagger2-spring-boot-starter</artifactId>

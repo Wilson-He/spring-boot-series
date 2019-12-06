@@ -1,0 +1,7 @@
+web:
+  common:
+    validation:
+      msg-locale: zh_CN
+swagger:
+  docket:
+    base-package: io.github.validation

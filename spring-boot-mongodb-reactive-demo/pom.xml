@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-mongodb-reactive-demo</artifactId>
-    <packaging>war</packaging>
 
     <name>spring-boot-mongodb-reactive-demo Maven Webapp</name>
     <!-- FIXME change it to the project's website -->

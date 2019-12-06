@@ -1,14 +1,16 @@
 package io.github.test;
 
-import io.github.test.domain.entity.UserBase;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 
 /**
  * @author: Wilson
@@ -16,27 +18,18 @@ import java.util.concurrent.atomic.AtomicReference;
  **/
 @SpringBootApplication
 @MapperScan("io.github.test.mapper")
+@RestController
 public class TestApplication {
+    @Resource
+    private HttpServletRequest request;
+
+    @GetMapping("/hello")
+    public String hello(){
+        System.err.println(request.getHeader("Authorization"));
+        return "hello";
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(TestApplication.class, args);
     }
-
-    public static void schedule() {
-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(10);
-        executorService.schedule(() -> System.out.println("schedule delay 5s"), 3, TimeUnit.SECONDS);
-        executorService.scheduleAtFixedRate(() -> System.out.println("schedule delay 5s"), 2L,
-                2L, TimeUnit.SECONDS);
-        executorService.shutdown();
-    }
-
-    public static void reference() {
-        UserBase userBaseA = new UserBase().setId(11);
-        AtomicReference<UserBase> reference = new AtomicReference<>(userBaseA);
-        userBaseA.setId(15);
-        UserBase userBaseB = new UserBase().setId(111);
-        System.out.println(reference.get());
-        reference.compareAndSet(userBaseA, userBaseB);
-        System.out.println(reference.get());
-    }
-
 }
