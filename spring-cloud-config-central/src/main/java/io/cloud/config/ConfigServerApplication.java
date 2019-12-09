@@ -13,16 +13,16 @@ import javax.annotation.PostConstruct;
  * @since 2019/12/9
  **/
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @EnableConfigServer
 public class ConfigServerApplication {
-    @Value("${rocketmq.topic}")
+  /*  @Value("${rocketmq.topic}")
     private String topic;
 
     @PostConstruct
     public void init() {
         System.out.println("topic:" + topic);
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerApplication.class, args);
