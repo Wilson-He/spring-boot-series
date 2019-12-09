@@ -19,7 +19,7 @@
         <module>spring-boot-data-mongodb-demo</module>
         <module>spring-rocketmq</module>
         <module>spring-boot-jwt-redis</module>
-        <module>spring-cloud-config-central</module>
+        <module>spring-cloud-config-center</module>
     </modules>
     <packaging>pom</packaging>
 

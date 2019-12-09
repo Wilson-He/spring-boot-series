@@ -1,8 +1,6 @@
 spring:
   cloud:
     config:
-      discovery:
-        service-id: config-server
       server:
         git:
           uri: https://gitee.com/Wilson-He/spring-boot-series.git
@@ -10,8 +8,6 @@ spring:
           force-pull: true
           password:
           search-paths: /config-server-properties
-      name: rocketmq
-      profile: ${spring.profiles.active}
 eureka:
   client:
     service-url:

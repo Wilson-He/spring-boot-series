@@ -6,3 +6,6 @@ eureka:
       defaultZone: http://localhost:${server.port}/eureka
     fetch-registry: false
     register-with-eureka: false
+spring:
+  application:
+    name: registry-center
