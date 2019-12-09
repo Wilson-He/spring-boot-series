@@ -9,19 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-rocket-mq-demo</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>rocket-producer</module>
-        <module>rocket-consumer</module>
-        <module>rocket-common</module>
-    </modules>
-
-    <properties>
-        <rockemq-spring.version>2.0.3</rockemq-spring.version>
-    </properties>
+    <artifactId>spring-cloud-config-central</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -31,17 +25,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.apache.rocketmq</groupId>
-                <artifactId>rocketmq-spring-boot-starter</artifactId>
-                <version>${rockemq-spring.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <scope>import</scope>
+                <version>Greenwich.SR1</version>
                 <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>

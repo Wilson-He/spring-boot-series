@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+      server:
+        git:
+          uri: https://gitee.com/wilson-he/spring-boot-series.git
+          username: Wilson-He
+          basedir: /config-server-properties
+          refresh-rate: 10
+          force-pull: true
+      profile: rocketmq
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000
