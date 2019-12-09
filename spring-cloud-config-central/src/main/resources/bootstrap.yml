@@ -7,12 +7,12 @@ spring:
         git:
           uri: https://gitee.com/Wilson-He/spring-boot-series.git
           username: Wilson-He
-          basedir: /config-server-properties
           force-pull: true
           password:
+          search-paths: /config-server-properties
       name: rocketmq
       profile: ${spring.profiles.active}
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
