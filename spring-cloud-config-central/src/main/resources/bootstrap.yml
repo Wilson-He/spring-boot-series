@@ -10,8 +10,8 @@ spring:
           basedir: /config-server-properties
           refresh-rate: 10
           force-pull: true
-      profile: rocketmq
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8000
+      name: rocketmq
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000

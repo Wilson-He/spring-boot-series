@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-rocket-mq-demo</artifactId>
+    <artifactId>spring-boot-rocket-mq</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>rocket-producer</module>
