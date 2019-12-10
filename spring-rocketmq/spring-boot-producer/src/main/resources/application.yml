@@ -3,4 +3,4 @@ rocketmq:
   producer:
     group: spring-boot-producer
 server:
-  port: 9999
+  port: 9990

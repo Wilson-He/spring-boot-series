@@ -16,6 +16,7 @@
         <module>spring-boot-consumer</module>
         <module>rocket-common</module>
         <module>spring-cloud-consumer</module>
+        <module>spring-cloud-producer</module>
     </modules>
 
     <properties>
