@@ -3,5 +3,3 @@ server:
 spring:
   application:
     name: config-center
-  profiles:
-    active: test

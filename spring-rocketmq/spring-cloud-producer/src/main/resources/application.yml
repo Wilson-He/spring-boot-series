@@ -3,3 +3,7 @@ server:
 spring:
   application:
     name: spring-cloud-producer
+rocketmq:
+  producer:
+    group: spring-cloud-producer
+  name-server: 127.0.0.1:9876

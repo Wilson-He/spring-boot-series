@@ -20,11 +20,8 @@
     </modules>
 
     <properties>
-        <rockemq-spring.version>2.0.3</rockemq-spring.version>
+        <rockemq-spring.version>2.0.4</rockemq-spring.version>
     </properties>
-
-    <dependencies>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>

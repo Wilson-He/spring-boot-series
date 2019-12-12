@@ -5,7 +5,7 @@ eureka:
 spring:
   cloud:
     config:
-      profile: dev
+      profile: test
       discovery:
         enabled: true
         service-id: config-center

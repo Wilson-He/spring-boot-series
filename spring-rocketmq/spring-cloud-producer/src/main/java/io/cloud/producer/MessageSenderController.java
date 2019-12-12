@@ -24,13 +24,13 @@ public class MessageSenderController {
     @Value("${rocketmq.topic.order}")
     private String orderTopic;
 
-    @GetMapping("/")
+    @GetMapping("/user")
     public String sendUser(@RequestParam String msg) {
         rocketMQTemplate.send(userTopic, MessageBuilder.withPayload(msg).build());
         return "send user success";
     }
 
-    @GetMapping("/")
+    @GetMapping("/order")
     public String sendOrder(@RequestParam String msg) {
         rocketMQTemplate.send(orderTopic, MessageBuilder.withPayload(msg).build());
         return "send order success";
