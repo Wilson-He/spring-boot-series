@@ -1,5 +1,5 @@
 server:
-  port: 9812
+  port: 10000
 spring:
   application:
     name: spring-cloud-consumer

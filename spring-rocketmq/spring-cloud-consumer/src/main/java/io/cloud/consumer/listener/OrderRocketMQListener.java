@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
  * @since 2019/12/9
  **/
 @Slf4j
-@RocketMQMessageListener(consumerGroup = "${rocketmq.consumer-group.user}", topic = "${rocketmq.topic.user}")
+@RocketMQMessageListener(consumerGroup = "${rocketmq.consumer-group.order}", topic = "${rocketmq.topic.order}")
 @Service
-public class UserRocketMQListener implements RocketMQListener<MessageExt> {
+public class OrderRocketMQListener implements RocketMQListener<MessageExt> {
     @Override
     public void onMessage(MessageExt message) {
-        log.info("user msg id: {}, payload: {}", message.getMsgId(), new String(message.getBody()));
+        log.info("order msg id: {}, payload: {}", message.getMsgId(), new String(message.getBody()));
     }
 }

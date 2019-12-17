@@ -5,9 +5,9 @@ eureka:
 spring:
   cloud:
     config:
-      profile: test
       discovery:
         enabled: true
         service-id: config-center
-#     资源文件名
+      # 加载配置中心目录下的资源文件rocketmq-test.properties
       name: rocketmq
+      profile: test

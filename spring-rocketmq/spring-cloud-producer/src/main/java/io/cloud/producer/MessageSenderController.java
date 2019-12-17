@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 public class MessageSenderController {
     @Resource
     private RocketMQTemplate rocketMQTemplate;
+
     @Value("${rocketmq.topic.user}")
     private String userTopic;
     @Value("${rocketmq.topic.order}")

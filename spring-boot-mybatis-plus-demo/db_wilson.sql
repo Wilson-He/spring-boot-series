@@ -15,7 +15,7 @@ create table user_base
     password    varchar(45)       null,
     create_time timestamp         null,
     update_time timestamp         null,
-    is_delete   tinyint default 1 not null comment '删除(YES:0-未删除,NO:1-已删除)',
+    is_delete   tinyint default 1 not null comment '删除(YES:1-已删除,NO:0-未删除)',
     status      varchar(10)       null comment '状态(ENABLE-启用,DISABLE-禁用)'
 );
 

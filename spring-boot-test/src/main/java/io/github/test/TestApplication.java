@@ -20,12 +20,8 @@ import java.util.Enumeration;
 @MapperScan("io.github.test.mapper")
 @RestController
 public class TestApplication {
-    @Resource
-    private HttpServletRequest request;
-
     @GetMapping("/hello")
     public String hello(){
-        System.err.println(request.getHeader("Authorization"));
         return "hello";
     }
 

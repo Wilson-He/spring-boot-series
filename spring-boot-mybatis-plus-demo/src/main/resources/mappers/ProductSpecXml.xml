@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.github.mybatis.generate.mapper.ProductSpecMapper">
+<mapper namespace="io.mybatis.plus.mapper.ProductSpecMapper">
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="io.github.mybatis.generate.entity.ProductSpec">
+    <resultMap id="BaseResultMap" type="io.mybatis.plus.entity.ProductSpec">
         <result column="id" property="id"/>
         <result column="color" property="color"/>
         <result column="price" property="price"/>

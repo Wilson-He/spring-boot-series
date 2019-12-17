@@ -1,5 +1,5 @@
 server:
-  port: 9991
+  port: 9990
 spring:
   application:
     name: spring-cloud-producer
