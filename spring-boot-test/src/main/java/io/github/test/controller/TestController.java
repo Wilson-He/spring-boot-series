@@ -26,7 +26,7 @@ import java.util.Set;
  * @since 2019-05-07
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/test")
 public class TestController {
     @Resource
     private List<HttpMessageConverters> messageConverters;

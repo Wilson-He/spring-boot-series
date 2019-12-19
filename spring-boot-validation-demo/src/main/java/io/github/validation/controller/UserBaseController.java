@@ -2,7 +2,7 @@ package io.github.validation.controller;
 
 import io.github.validation.vo.ChangePasswordVO;
 import io.github.validation.vo.UserVO;
-import io.web.validation.group.UpdateGroup;
+import io.springframework.common.validation.group.UpdateGroup;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
 package io.github.validation.vo;
 
+import io.springframework.common.validation.group.InsertGroup;
+import io.springframework.common.validation.group.UpdateGroup;
 import io.swagger.annotations.ApiModelProperty;
-import io.web.validation.group.InsertGroup;
-import io.web.validation.group.UpdateGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 

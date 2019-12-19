@@ -1,9 +1,3 @@
-swagger:
-  docket:
-    base-package: io.github
-    produces: application/json
-  enabled: true
-
 spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
