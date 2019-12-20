@@ -18,7 +18,6 @@ import javax.validation.constraints.Min;
 @RequestMapping("/")
 @Validated
 public class IndexController {
-
     @GetMapping("/index")
     public ServerResponse<String> index() {
         return ServerResponse.success("index");
