@@ -35,7 +35,7 @@
             <plugin>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>generator-maven-plugin</artifactId>
-                <version>0.2.0</version>
+                <version>0.2.3</version>
                 <configuration>
                     <basePackage>io.wilson.jwt</basePackage>
                     <useSwagger>true</useSwagger>

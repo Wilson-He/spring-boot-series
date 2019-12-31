@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-web-demo</artifactId>
-    <version>0.0.1</version>
-
-    <properties>
-        <DOCKER_HOST>tcp://111.229.4.194:2375</DOCKER_HOST>
-    </properties>
+    <artifactId>spring-boot-nginx-docker-demo</artifactId>
 
     <dependencies>
         <dependency>
@@ -25,19 +20,5 @@
             <groupId>io.github.wilson-he</groupId>
             <artifactId>swagger2-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
     </dependencies>
-
-    <build>
-        <finalName>spring-boot-web-demo</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
