@@ -2,4 +2,4 @@ swagger:
   docket:
     base-package: io.wilson.docker.controller
 server:
-  port: 9100
+  port: 8080
