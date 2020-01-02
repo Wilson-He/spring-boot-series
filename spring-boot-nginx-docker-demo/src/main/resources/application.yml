@@ -3,3 +3,7 @@ swagger:
     base-package: io.wilson.docker.controller
 server:
   port: 8080
+spring:
+  common:
+    validation:
+      msg-locale: zh_CN
