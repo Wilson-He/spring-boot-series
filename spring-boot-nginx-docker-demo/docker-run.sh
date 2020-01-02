@@ -10,7 +10,7 @@ docker run --rm -h docker-spring-boot -d \
      
 docker run --rm  -h docker-spring-boot -d -p 8080:8080 \
      -v /etc/localtime:/etc/localtime:ro \
-     -v docker-spring-boot \
+     -v docker-spring-boot:/app \
      -v /var/run/docker.sock:/var/run/docker.sock \
     --name docker-spring-boot docker-spring-boot/latest
 
