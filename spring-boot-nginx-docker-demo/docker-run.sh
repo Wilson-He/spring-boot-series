@@ -2,17 +2,21 @@
 
 # docker-spring-boot
 docker run -h docker-spring-boot -d \
-     -p 8999:8080 \
+     -p 8080:8080 \
      -v /etc/localtime:/etc/localtime:ro\
      -v docker-spring-boot-docker:/app \
+     -e LC_ALL="en_US.UTF-8" -e TZ="Asia/Shanghai" \
      --name docker-spring-boot docker-spring-boot/latest
-#     -e LC_ALL="en_US.UTF-8" -e TZ="Asia/Shanghai" \
+
+# docker-spring-boot
+docker run -d \
+     -p 8080:8080 \
+     --name docker-spring-boot docker-spring-boot/latest
 
 # docker-spring-boot-2
 docker run --rm  -h docker-spring-boot-2 -d \
      -p 8080:8080 \
      -v /etc/timezone:/etc/timezone:ro \
-     -v /etc/localtime:/etc/localtime:ro \
      -v docker-spring-boot-docker-2:/app \
      --name docker-spring-boot-2 docker-spring-boot/latest
 
