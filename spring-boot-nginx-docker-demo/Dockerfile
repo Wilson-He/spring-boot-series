@@ -14,5 +14,5 @@ EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","ecs-application.jar"]
 
-# docker build -t ecs-application/latest .
+# docker build -t docker-spring-boot/latest .
 

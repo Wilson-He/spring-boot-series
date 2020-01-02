@@ -6,7 +6,7 @@
               value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) %-5level [%thread] %c [%L] : %msg%n"/>
     <!-- log文件路径 -->
     <!--    <property name="LOG_PATH" value="/usr/application/ecs-application/logs"/>-->
-    <property name="LOG_PATH" value="/app/logs"/>
+    <property name="LOG_PATH" value="E:/IntelliJ/workspace/spring-boot-series/spring-boot-nginx-docker-demo/logs"/>
 
     <!--彩色日志定义-->
 
@@ -104,7 +104,7 @@
            <neverBlock>false</neverBlock>
        </appender>
    -->
-    <springProfile name="dev">
+    <springProfile name="default">
         <root level="info">
             <appender-ref ref="console"/>
             <appender-ref ref="info"/>

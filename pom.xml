@@ -53,7 +53,12 @@
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>spring-boot-common</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>swagger2-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 
