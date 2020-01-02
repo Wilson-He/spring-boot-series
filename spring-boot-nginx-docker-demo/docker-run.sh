@@ -4,8 +4,8 @@
 docker run --rm  -h docker-spring-boot -d \
      -p 8080:8080 \
      -v /etc/localtime:/etc/localtime:ro\
-     -v docker-spring-boot--docker:/app \
-     --name docker-spring-boot docker-spring-boot-/latest
+     -v docker-spring-boot-docker:/app \
+     --name docker-spring-boot docker-spring-boot/latest
 
 # docker-spring-boot-2
 docker run --rm  -h docker-spring-boot-2 -d \
@@ -13,7 +13,7 @@ docker run --rm  -h docker-spring-boot-2 -d \
      - /etc/timezone:/etc/timezone:ro \
      -v /etc/localtime:/etc/localtime:ro \
      -v docker-spring-boot-docker-2:/app \
-     --name docker-spring-boot-2 docker-spring-boot-/latest
+     --name docker-spring-boot-2 docker-spring-boot/latest
 
 docker run --rm -d -h  docker-spring-boot- -p 80:80 \
         -v /etc/localtime:/etc/localtime \
