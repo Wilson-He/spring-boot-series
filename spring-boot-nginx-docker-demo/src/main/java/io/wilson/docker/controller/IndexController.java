@@ -23,4 +23,10 @@ public class IndexController {
         log.error("error");
         return ServerResponse.success("error");
     }
+
+    @GetMapping("/info")
+    public ServerResponse info() {
+        log.error("info");
+        return ServerResponse.success("info");
+    }
 }
