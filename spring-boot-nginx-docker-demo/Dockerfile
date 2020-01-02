@@ -9,10 +9,10 @@ WORKDIR /app
 
 
 #复制target/spring-boot-web-demo.jar到容器里WORKDIR下
-COPY target/docker-spring-boot.jar  docker-spring-boot.jar
+COPY target  ./
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","ecs-application.jar"]
+ENTRYPOINT ["java","-jar","./target/ecs-application.jar"]
 
 # docker build -t ecs-application/latest .
 
