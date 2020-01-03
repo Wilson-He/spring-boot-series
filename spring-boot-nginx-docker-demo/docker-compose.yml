@@ -8,4 +8,4 @@ services:
       - "8080:8080"
     volumes:
       - /etc/timezone:/etc/timezone:ro
-      - docker-spring-boot:/app
+      - /var/lib/docker/volumes/docker-spring-boot:/app
