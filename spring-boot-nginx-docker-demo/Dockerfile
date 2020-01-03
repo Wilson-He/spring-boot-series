@@ -11,10 +11,10 @@ RUN mkdir /app
 WORKDIR /app
 
 #复制target/spring-boot-web-demo.jar到容器里WORKDIR下
-COPY ./*  ./
+COPY target/docker-spring-boot.jar  docker-spring-boot.jar
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","target/docker-spring-boot.jar"]
+ENTRYPOINT ["java","-jar","docker-spring-boot.jar"]
 
 # docker build -t docker-spring-boot/latest .
 

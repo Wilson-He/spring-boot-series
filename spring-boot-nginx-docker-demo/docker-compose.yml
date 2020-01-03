@@ -1,10 +1,8 @@
 version: '3'
 services:
-  web:
+  app:
     build: ./
     container_name: docker-spring-boot
     image: docker-spring-boot/latest
     ports:
       - "8080:8080"
-    volumes:
-      - /docker-spring-boot:/app:rw
