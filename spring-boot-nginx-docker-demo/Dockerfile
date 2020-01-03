@@ -14,7 +14,7 @@ WORKDIR /app
 COPY target/docker-spring-boot.jar  docker-spring-boot.jar
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","docker-spring-boot.jar"]
+ENTRYPOINT ["java","-jar","/app/docker-spring-boot.jar"]
 
 # docker build -t docker-spring-boot/latest .
 
