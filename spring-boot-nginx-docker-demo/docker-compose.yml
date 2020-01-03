@@ -7,5 +7,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /etc/timezone:/etc/timezone:ro:rw
       - docker-spring-boot:/app:rw
