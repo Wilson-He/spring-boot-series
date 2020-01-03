@@ -7,11 +7,17 @@ hasContainer=$(docker images|grep nginx-spring-boot|wc -l)
 if [ $hasContainer == 1 ];
     then exit
 fi;
-docker run -d -h nginx-spring-boot \
-    -p 80:80 \
-    -v /etc/localtime:/etc/localtime:ro \
-    -e LC_ALL="en_US.UTF-8" -e TZ="Asia/Shanghai" \
-    -v nginx-spring-boot:/etc/nginx \
-    --link docker-spring-boot \
-    --name nginx-spring-boot nginx
 
+docker run --rm  -h docker-spring-boot -d \
+     -p 8080:8080 \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     -v /etc/localtime:/etc/localtime:ro \
+     -v docker-spring-boot:/app \
+     -e TZ="Asia/Shanghai" \
+     --name docker-spring-boot docker-spring-boot/latest
+
+# 单SpringBoot容器
+docker run  -d -h  nginx-spring-boot -p 80:80 \
+        -v /etc/localtime:/etc/localtime \
+        -v nginx-spring-boot:/etc/nginx/ \
+        --link docker-spring-boot --name nginx-spring-boot  nginx

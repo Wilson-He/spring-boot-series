@@ -29,3 +29,4 @@
                 -v docker-spring-boot:/app \
                 --name docker-spring-boot docker-spring-boot/latest
 4. 构建项目
+5. 配置nginx
