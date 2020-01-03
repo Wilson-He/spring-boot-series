@@ -6,5 +6,5 @@ services:
     image: docker-spring-boot/latest
     ports:
       - "8080:8080"
-    volumes:
-      - ./docker-spring-boot:/app
+#    volumes:
+#      - ./docker-spring-boot:/app
