@@ -9,6 +9,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 COPY target/docker-spring-boot.jar  docker-spring-boot.jar
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app/docker-spring-boot.jar"]
+ENTRYPOINT ["java","-jar","docker-spring-boot.jar"]
 # docker build -t docker-spring-boot/latest .
 
