@@ -26,19 +26,19 @@ docker run --rm  -h docker-spring-boot-2 -d \
      -v docker-spring-boot-docker-2:/app \
      --name docker-spring-boot-2 docker-spring-boot/latest
 
-docker run --rm -d -h  docker-spring-boot-2 -p 80:80 \
+# Nginx单SpringBoot
+docker run -d -h docker-nginx -p 80:80 \
+        -e TZ="Asia/Shanghai" \
         -v /etc/localtime:/etc/localtime \
-        -v nginx:/etc/nginx/ \
-        --name ecs-nginx  nginx
+        -v docker-nginx:/etc/nginx/ \
+        --link docker-spring-boot\
+        --name docker-nginx  nginx
 
 # Nginx双SpringBoot容器负载均衡
 docker run --rm -d -h  ecs-nginx -p 80:80 \
         -v /etc/localtime:/etc/localtime \
         -v nginx:/etc/nginx/ \
-        --link docker-spring-boot --link docker-spring-boot-2 --name ecs-nginx  nginx
+        --link docker-spring-boot --link docker-spring-boot-2 \
+        --name ecs-nginx  nginx
 
 
-docker run -d \
-         -v /etc/localtime:/etc/localtime:ro\
-         -v docker-spring-boot:/app \
-         --name docker-spring-boot docker-spring-boot/latest
