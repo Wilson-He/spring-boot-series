@@ -6,4 +6,4 @@ EXPOSE 80
 VOLUME /docker-nginx
 WORKDIR /etc/nginx
 ADD nginx /etc
-ENTRYPOINT ["nginx","-g","'daemon off'"]
+ENTRYPOINT ["nginx","-g 'daemon off'"]
