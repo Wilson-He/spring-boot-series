@@ -29,4 +29,9 @@ public class IndexController {
         log.error("info");
         return ServerResponse.success("info");
     }
+
+    @GetMapping("/hi")
+    public ServerResponse hello() {
+        return ServerResponse.success("hi");
+    }
 }
