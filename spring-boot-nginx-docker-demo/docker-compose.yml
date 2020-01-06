@@ -26,6 +26,6 @@ services:
     links:
       - app
     volumes:
-      - .nginx/conf.d:/etc/nginx/conf.d
-      - .nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - /var/run/docker.sock:/var/run/docker.sock
