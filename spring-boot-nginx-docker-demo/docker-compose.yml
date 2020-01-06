@@ -7,4 +7,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./docker-spring-boot:/app
+      - ./volume:/app
