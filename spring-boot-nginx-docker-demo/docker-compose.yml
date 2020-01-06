@@ -6,10 +6,8 @@ services:
     hostname: docker-spring-boot
     container_name: docker-spring-boot
     image: docker-spring-boot/latest
-    ports:
-      - 8080:8080
     volumes:
-      - ./volume:/app
+      - ./volumes/app:/app
   nginx:
     depends_on:
       - app
@@ -26,8 +24,7 @@ services:
     links:
       - app
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/logs:/var/log/nginx
-#      - ./nginx/access.log:/etc/nginx/logs/access.log
+      - ./volumes/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./volumes/nginx/conf.d:/etc/nginx/conf.d
+      - ./volumes/nginx/logs:/var/log/nginx
       - /var/run/docker.sock:/var/run/docker.sock
