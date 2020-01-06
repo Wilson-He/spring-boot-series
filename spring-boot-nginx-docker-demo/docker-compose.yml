@@ -3,11 +3,20 @@ services:
   app:
     restart: always
     build: ./
+    hostname: docker-spring-boot
     container_name: docker-spring-boot
     image: docker-spring-boot/latest
     ports:
-      - "8080:8080"
+      - 8080:8080
     volumes:
       - ./volume:/app
-#  nginx:
-#    build:
+  nginx:
+    hostname: docker-nginx
+    image: nginx:1.17.6
+    restart: always
+    ports:
+      - 80:80
+    links:
+      - docker-spring-boot
+    volumes:
+      - ./nginx:/etc
