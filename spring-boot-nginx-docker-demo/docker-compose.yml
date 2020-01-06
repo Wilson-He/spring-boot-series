@@ -18,11 +18,13 @@ services:
     image: nginx:1.17.6
     environment:
       TZ: Asia/Shanghai
-    command: ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
     restart: always
+    expose:
+      - 80
     ports:
       - 80:80
     links:
       - app
     volumes:
       - ./nginx:/etc
+      - /var/run/docker.sock:/var/run/docker.sock
