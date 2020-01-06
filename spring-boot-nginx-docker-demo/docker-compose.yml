@@ -29,5 +29,5 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
-      - ./nginx/access.log:/etc/nginx/logs/access.log
+#      - ./nginx/access.log:/etc/nginx/logs/access.log
       - /var/run/docker.sock:/var/run/docker.sock
