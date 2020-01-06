@@ -30,8 +30,8 @@ public class IndexController {
         return ServerResponse.success("info");
     }
 
-    @GetMapping("/hello")
+/*    @GetMapping("/hello")
     public ServerResponse hello() {
         return ServerResponse.success("hello world");
-    }
+    }*/
 }
