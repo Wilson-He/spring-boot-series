@@ -17,6 +17,6 @@ services:
     ports:
       - 80:80
     links:
-      - docker-spring-boot
+      - docker-spring-boot:docker-spring-boot
     volumes:
       - ./nginx:/etc
