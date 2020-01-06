@@ -9,5 +9,5 @@ services:
       - "8080:8080"
     volumes:
       - ./volume:/app
-  nginx:
-    build:
+#  nginx:
+#    build:
