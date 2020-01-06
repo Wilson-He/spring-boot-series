@@ -28,6 +28,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs/docker-spring-boot.log:/var/log/nginx/docker-spring-boot.log
       - ./nginx/logs:/var/log/nginx
 #      - ./nginx/conf.d:/etc/nginx/conf.d
 #      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
