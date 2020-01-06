@@ -17,7 +17,7 @@ services:
     hostname: docker-nginx
     image: nginx:1.17.6
     environment:
-      TZ=Asia/Shanghai
+      TZ:   Asia/Shanghai
     command: ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
     restart: always
     ports:
