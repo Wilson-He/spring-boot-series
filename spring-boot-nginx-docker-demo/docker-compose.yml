@@ -18,7 +18,7 @@ services:
     image: nginx:1.17.6
     environment:
       TZ: Asia/Shanghai
-    restart: no
+    restart: always
     expose:
       - 80
     ports:
