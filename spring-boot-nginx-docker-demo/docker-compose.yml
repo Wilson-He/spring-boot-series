@@ -11,12 +11,14 @@ services:
     volumes:
       - ./volume:/app
   nginx:
+    depends_on:
+      - app
     hostname: docker-nginx
     image: nginx:1.17.6
     restart: always
     ports:
       - 80:80
     links:
-      - docker-spring-boot:docker-spring-boot
+      - app
     volumes:
       - ./nginx:/etc
