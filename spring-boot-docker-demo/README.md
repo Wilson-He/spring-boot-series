@@ -3,8 +3,8 @@
 ---
 
 ## Docker远程连接配置
-  - 修改Docker配置：<code>vi /lib/systemd/system/docker.service</code>
-  注释原有ExecStart行再添加ExceStart：
+  - 修改Docker配置：<code>vi /lib/systemd/system/docker.service</code>,
+   注释原有ExecStart行再添加ExceStart：
   	```
   	ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock --containerd=/run/containerd/containerd.sock
   	```
