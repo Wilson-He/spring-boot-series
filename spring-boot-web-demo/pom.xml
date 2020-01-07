@@ -12,9 +12,6 @@
     <artifactId>spring-boot-web-demo</artifactId>
     <version>0.0.1</version>
 
-    <properties>
-        <DOCKER_HOST>tcp://111.229.4.194:2375</DOCKER_HOST>
-    </properties>
 
     <dependencies>
         <dependency>
