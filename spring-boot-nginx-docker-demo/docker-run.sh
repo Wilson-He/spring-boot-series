@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# docker-spring-boot
+# docker-spring-boot 单点
 docker run --rm -h docker-spring-boot -d \
      -v /etc/localtime:/etc/localtime:ro\
      --name docker-spring-boot docker-spring-boot/latest
@@ -9,7 +9,7 @@ docker run --rm  -h docker-spring-boot -d -p 8080:8080 \
      -v docker-spring-boot:/app \
     --name docker-spring-boot docker-spring-boot/latest
 
-# docker-spring-boot
+# docker-spring-boot集群
 docker run -d \
      -p 8080:8080 \
      --name docker-spring-boot docker-spring-boot/latest
