@@ -6,6 +6,16 @@ services:
     hostname: docker-spring-boot
     container_name: docker-spring-boot
     image: docker-spring-boot/latest
+#    ports:
+#      - 8080:8080
+    volumes:
+      - ./volumes/app:/app
+  app-bak:
+    restart: always
+    build: ./
+    hostname: docker-spring-boot
+    container_name: docker-spring-boot
+    image: docker-spring-boot/latest
     volumes:
       - ./volumes/app:/app
   nginx:

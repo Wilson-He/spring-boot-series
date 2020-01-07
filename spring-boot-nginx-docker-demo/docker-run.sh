@@ -4,14 +4,11 @@
 docker run --rm -h docker-spring-boot -d \
      -p 8080:8080 \
      -v /etc/localtime:/etc/localtime:ro\
-     -e LC_ALL="en_US.UTF-8" -e TZ="Asia/Shanghai" \
      -v /var/run/docker.sock:/var/run/docker.sock \
      --name docker-spring-boot docker-spring-boot/latest
      
 docker run --rm  -h docker-spring-boot -d -p 8080:8080 \
-     -v /etc/localtime:/etc/localtime:ro \
      -v docker-spring-boot:/app \
-     -v /var/run/docker.sock:/var/run/docker.sock \
     --name docker-spring-boot docker-spring-boot/latest
 
 # docker-spring-boot
@@ -28,7 +25,6 @@ docker run --rm  -h docker-spring-boot-2 -d \
 
 # Nginx单SpringBoot
 docker run -d -h docker-nginx -p 80:80 \
-        -e TZ="Asia/Shanghai" \
         -v /etc/localtime:/etc/localtime \
         -v docker-nginx:/etc/nginx/ \
         --link docker-spring-boot\

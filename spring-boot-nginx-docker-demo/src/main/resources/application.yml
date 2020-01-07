@@ -1,6 +1,5 @@
 swagger:
   docket:
-    host: 111.229.4.194
     base-package: io.wilson.docker.controller
 server:
   port: 8080
