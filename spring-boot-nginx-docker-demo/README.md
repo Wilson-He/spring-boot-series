@@ -6,12 +6,12 @@
        mvn clean package
        if [ -e "./volumes/app/docker-spring-boot.jar" ]
          then rm -f ./volumes/app/docker-spring-boot.jar \
-               && cp ./target/docker-spring-boot.jar ./volumes/app/docker-spring-boot.jar \
-       		&& docker restart docker-spring-boot \
-               && echo "update restart success"
+                && cp ./target/docker-spring-boot.jar ./volumes/app/docker-spring-boot.jar \
+                && docker restart docker-spring-boot \
+                && echo "update restart success"
          else mkdir volumes/app -p \
-               && cp ./target/docker-spring-boot.jar ./volumes/app/docker-spring-boot.jar \
-       		&& docker-compose -p docker-spring-boot up -d \
-               && echo "first start"
+                && cp ./target/docker-spring-boot.jar ./volumes/app/docker-spring-boot.jar \
+                && docker-compose -p docker-spring-boot up -d \
+                && echo "first start"
        fi
 3. 构建项目
