@@ -1,5 +1,6 @@
 upstream application {
-   server docker-spring-boot:8080;
+   server docker-spring-boot:8080 fail_timeout=2s max_fails=2 weight=1;
+   server docker-spring-boot-bak:8080 fail_timeout=2s max_fails=2 weight=1;
 }
 
 server{
