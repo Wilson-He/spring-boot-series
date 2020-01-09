@@ -7,3 +7,5 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: tiger
+    ports:
+      - 3306:3306
