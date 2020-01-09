@@ -37,7 +37,7 @@ services:
 #    volumes:
 #      - data02:/usr/share/elasticsearch/data
 #    networks:
-      - elastic
+#      - elastic
 volumes:
   data01:
     driver: local
