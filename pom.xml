@@ -23,6 +23,8 @@
         <module>spring-boot-web-demo</module>
         <module>spring-boot-nginx-docker-demo</module>
         <module>spring-boot-docker-demo</module>
+        <module>sharding-jdbc</module>
+        <module>docker-integration</module>
     </modules>
     <packaging>pom</packaging>
 
