@@ -14,7 +14,7 @@ services:
       - ./mysql/master/data:/var/lib/mysql
       - ./mysql/master/log:/var/log/mysql
       - ./mysql/master/conf:/etc/mysql
-      - ./mysql/master/init.sql:/docker-entrypoint-initdb.d/
+      - ./mysql/master/init.sql:/docker-entrypoint-initdb.d/init.sql
   db-slave:
     image: mysql:5.7.28
     container_name: mysql-master1-slave1
