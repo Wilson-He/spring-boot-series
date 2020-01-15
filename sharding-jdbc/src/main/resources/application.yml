@@ -1,0 +1,15 @@
+spring:
+  common:
+    validation:
+      msg-locale: zh_CN
+    serialization:
+      longToString: true
+  profiles:
+    include: jdbc
+  jackson:
+    default-property-inclusion: always
+swagger:
+  dockets:
+mybatis-plus:
+  configuration:
+    default-scripting-language: io.wilson.sharding.mybatis.ExtMybatisXMLLanguageDriver

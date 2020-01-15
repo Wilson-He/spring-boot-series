@@ -95,7 +95,7 @@ public class MybatisConfig {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
         bean.setDataSource(dynamicDataSource);
         bean.setGlobalConfig(globalConfig());
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mappers/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mapper/*.xml"));
         bean.setPlugins(new Interceptor[]{paginationInterceptor(),performanceInterceptor()});
         return bean.getObject();
     }*/
@@ -111,7 +111,7 @@ public class MybatisConfig {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
         bean.setDataSource(dynamicDataSource);
         bean.setGlobalConfig(globalConfig());
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mappers/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:mapper/*.xml"));
         bean.setPlugins(new Interceptor[]{paginationInterceptor(), performanceInterceptor()});
         return bean.getObject();
     }

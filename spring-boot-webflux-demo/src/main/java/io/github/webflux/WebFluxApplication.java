@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @date: 2019/4/28
  **/
 @SpringBootApplication
-@MapperScan("io.github.webflux.mappers")
+@MapperScan("io.github.webflux.mapper")
 public class WebFluxApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebFluxApplication.class);

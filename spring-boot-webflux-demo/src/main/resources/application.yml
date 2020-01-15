@@ -14,6 +14,6 @@ mybatis-plus:
     db-config:
       id-type: auto
   type-aliases-package: io.github.mybatis.generate.entity
-  mapper-locations: classpath*:/mappers/*.xml
+  mapper-locations: classpath*:/mapper/*.xml
   configuration:
     database-id: db-test

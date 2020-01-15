@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  db-master:
+    image: mysql:5.7.28
+    container_name: mysql-master
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: tiger
+      TZ: Asia/Shanghai
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/master/data:/var/lib/mysql
+      - ./mysql/master/log:/var/log/mysql
+      - ./mysql/master/conf:/etc/mysql
+      - ./mysql/master/init.sql:/docker-entrypoint-initdb.d/
+  db-slave:
+    image: mysql:5.7.28
+    container_name: mysql-master
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: tiger
+      TZ: Asia/Shanghai
+    ports:
+      - 3307:3306
+    volumes:
+      - ./mysql/slave/data:/var/lib/mysql
+      - ./mysql/slave/log:/var/log/mysql
+      - ./mysql/slave/conf:/etc/mysql

@@ -1,0 +1,63 @@
+spring:
+  shardingsphere:
+    datasource:
+      ds0:
+        username: root
+        password: tiger
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost/order_0
+      ds0-slave:
+        username: root
+        password: tiger
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost/order_slave_0
+      ds1:
+        username: root
+        password: tiger
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost/order_1
+      ds1-slave:
+        username: root
+        password: tiger
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost/order_slave_1
+#      names: ds0,ds0-slave,ds1
+      names: ds0,ds0-slave,ds1,ds1-slave
+    sharding:
+      default-database-strategy:
+        inline:
+          # 根据id%2取模判断当前数据存取是在ds0还是ds1对应的数据库
+          algorithm-expression: ds$->{id % 2}
+          # 根据user_id分片存取数据
+          sharding-column: id
+      tables:
+        order_info:
+          # 根据sharding生成的id%2是0还是1分配到数据库_0还是_1
+          actual-data-nodes: ds$->{0..1}.order_info_$->{0..1}
+          # 雪花算法生成id
+          keyGenerator:
+            type: SNOWFLAKE
+            column: id
+          # 根据user_id%2取模确定分配到数据表_0还是_1
+          table-strategy:
+            inline:
+              # 根据user_id%2取模判断当前数据存取是在表order_info_0还是order_info_1
+              algorithm-expression: order_info_$->{user_id % 2}
+              # 根据user_id分片存取数据
+              sharding-column: user_id
+      # 多主从配置
+      master-slave-rules:
+        ds0:
+          masterDataSourceName: ds0
+          slave-data-source-names: [ds0-slave]
+        ds1:
+            masterDataSourceName: ds1
+            slaveDataSourceNames: [ds1-slave]
+    # 单主从配置
+#    masterslave:
+#      name: ds0_ms
+#      masterDataSourceName: ds0
+#      slaveDataSourceNames: [ds0-slave]
+    props:
+      # 打印分片信息与SQL语句
+      sql.show: true
