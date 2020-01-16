@@ -5,22 +5,22 @@ spring:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost/order_0
+        url: jdbc:mysql://111.229.4.194:3306/order_0
       ds0-slave:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost/order_slave_0
+        url: jdbc:mysql://111.229.4.194:3307/order_0
       ds1:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost/order_1
+        url: jdbc:mysql://111.229.4.194:3308/order_0
       ds1-slave:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost/order_slave_1
+        url: jdbc:mysql://111.229.4.194:3309/order_0
 #      names: ds0,ds0-slave,ds1
       names: ds0,ds0-slave,ds1,ds1-slave
     sharding:

@@ -6,16 +6,19 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
+      # root用户密码
       MYSQL_ROOT_PASSWORD: tiger
       TZ: Asia/Shanghai
+    # 设置容器hostname，使从机可通过hostname连接主机而不必使用ip
     hostname: mysql-master1
     ports:
       - 3306:3306
     volumes:
-      - ./mysql/master/data:/var/lib/mysql
-      - ./mysql/master/log:/var/log/mysql
-      - ./mysql/master/conf:/etc/mysql
-      - ./mysql/master/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/master1/data:/var/lib/mysql
+      - ./mysql/master1/log:/var/log/mysql
+      - ./mysql/master1/conf:/etc/mysql
+      # mysql初始化执行文件，用于创建同步用户
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
   db-slave:
     image: mysql:5.7.28
     container_name: mysql-master1-slave1
@@ -28,6 +31,40 @@ services:
     ports:
       - 3307:3306
     volumes:
-      - ./mysql/slave/data:/var/lib/mysql
-      - ./mysql/slave/log:/var/log/mysql
-      - ./mysql/slave/conf:/etc/mysql
+      - ./mysql/slave1/data:/var/lib/mysql
+      - ./mysql/slave1/log:/var/log/mysql
+      - ./mysql/slave1/conf:/etc/mysql
+  db-master2:
+    image: mysql:5.7.28
+    container_name: mysql-master2
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      # root用户密码
+      MYSQL_ROOT_PASSWORD: tiger
+      TZ: Asia/Shanghai
+    # 设置容器hostname，使从机可通过hostname连接主机而不必使用ip
+    hostname: mysql-master2
+    ports:
+      - 4406:3306
+    volumes:
+      - ./mysql/master2/data:/var/lib/mysql
+      - ./mysql/master2/log:/var/log/mysql
+      - ./mysql/master2/conf:/etc/mysql
+      # mysql初始化执行文件，用于创建同步用户
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  db-master-2-slave2:
+    image: mysql:5.7.28
+    container_name: mysql-master2-slave1
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    hostname: mysql-master2-slave1
+    environment:
+      MYSQL_ROOT_PASSWORD: tiger
+      TZ: Asia/Shanghai
+    ports:
+      - 4407:3306
+    volumes:
+      - ./mysql/slave2/data:/var/lib/mysql
+      - ./mysql/slave2/log:/var/log/mysql
+      - ./mysql/slave2/conf:/etc/mysql
