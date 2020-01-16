@@ -46,7 +46,7 @@ services:
     # 设置容器hostname，使从机可通过hostname连接主机而不必使用ip
     hostname: mysql-master2
     ports:
-      - 4406:3306
+      - 4306:3306
     volumes:
       - ./mysql/master2/data:/var/lib/mysql
       - ./mysql/master2/log:/var/log/mysql
@@ -63,7 +63,7 @@ services:
       MYSQL_ROOT_PASSWORD: tiger
       TZ: Asia/Shanghai
     ports:
-      - 4407:3306
+      - 4307:3306
     volumes:
       - ./mysql/slave2/data:/var/lib/mysql
       - ./mysql/slave2/log:/var/log/mysql
