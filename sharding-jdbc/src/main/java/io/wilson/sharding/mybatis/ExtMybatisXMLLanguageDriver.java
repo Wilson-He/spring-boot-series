@@ -8,10 +8,15 @@ import org.apache.ibatis.mapping.MappedStatement;
 import java.lang.reflect.Field;
 
 /**
+ * 解决Mybatis Plus原生Mapper语句的格式问题
+ *
  * @author Wilson
  * @since 2020/1/13
  **/
 public class ExtMybatisXMLLanguageDriver extends MybatisXMLLanguageDriver {
+    /**
+     * 缓存反射字段，减少反射带来的性能损耗
+     */
     private final Field sqlField;
 
     public ExtMybatisXMLLanguageDriver() throws NoSuchFieldException {

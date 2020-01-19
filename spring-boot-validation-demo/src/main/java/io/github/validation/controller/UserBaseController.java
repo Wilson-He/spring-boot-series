@@ -2,6 +2,7 @@ package io.github.validation.controller;
 
 import io.github.validation.vo.ChangePasswordVO;
 import io.github.validation.vo.UserVO;
+import io.springframework.common.validation.group.InsertGroup;
 import io.springframework.common.validation.group.UpdateGroup;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -22,11 +23,11 @@ import javax.validation.constraints.Min;
 @Validated
 public class UserBaseController {
 
-/*    @PostMapping("/")
+    @PostMapping("/")
     public Long insert(@RequestBody @Validated(InsertGroup.class) UserVO vo) {
         // do something
         return null;
-    }*/
+    }
 
     @GetMapping("/")
     public ResponseEntity get(@Min(1) @RequestParam Long id) {

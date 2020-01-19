@@ -17,10 +17,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
@@ -32,6 +28,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- 个人参数校验框架，可忽略 -->
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>spring-boot-common</artifactId>
@@ -42,12 +39,6 @@
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
             <version>${shardingsphere.version}</version>
         </dependency>
-        <!-- for spring namespace -->
-        <dependency>
-            <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>sharding-jdbc-spring-namespace</artifactId>
-            <version>${shardingsphere.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -55,6 +46,10 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 
@@ -65,6 +60,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- 个人代mybatis-plus码生成器插件 -->
             <plugin>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>generator-maven-plugin</artifactId>
@@ -80,6 +76,7 @@
                         <excludeController>false</excludeController>
                     </templates>
                     <crudIdType>Long</crudIdType>
+                    <!-- 只生成表order_info的实体类 -->
                     <inclusions>order_info</inclusions>
                 </configuration>
             </plugin>

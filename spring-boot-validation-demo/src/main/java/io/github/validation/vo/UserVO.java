@@ -17,6 +17,8 @@ public class UserVO {
     @NotBlank(groups = UpdateGroup.class)
     private String id;
     @NotBlank(groups = InsertGroup.class)
+    private String userId;
+    @NotBlank(groups = InsertGroup.class)
     @ApiModelProperty(value = "用户名")
     private String username;
     @NotBlank

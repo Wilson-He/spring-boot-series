@@ -17,7 +17,7 @@ services:
       - ./mysql/master1/data:/var/lib/mysql
       - ./mysql/master1/log:/var/log/mysql
       - ./mysql/master1/conf:/etc/mysql
-      # mysql初始化执行文件，用于创建同步用户
+      # mysql初始化执行文件，用于创建同步用户slave
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
   db-slave:
     image: mysql:5.7.28

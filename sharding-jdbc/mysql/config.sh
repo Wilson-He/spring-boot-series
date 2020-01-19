@@ -8,4 +8,5 @@ docker exec -it mysql-master2-slave1 /bin/bash
 mysql -uroot -ptiger
 
 change master to master_host='mysql-master1', master_user='slave', master_password='123456', master_port=3306, master_log_file='master1-bin.000003', master_log_pos=154, master_connect_retry=30;
-change master to master_host='111.229.9.194', master_user='slave', master_password='123456', master_port=4306, master_log_file='master1-bin.000010', master_log_pos=154, master_connect_retry=30;
+change master to master_host='mysql-master2', master_user='slave', master_password='123456', master_port=4306, master_log_file='master2-bin.000003', master_log_pos=154, master_connect_retry=30;
+# 如IO线程一直显示running则可尝试将host改为IP

@@ -1,27 +1,28 @@
 spring:
   shardingsphere:
+    host: localhost
     datasource:
       ds0:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://111.229.4.194:3306/order_0
+        url: jdbc:mysql://${spring.shardingsphere.host}:3306/order_0
       ds0-slave:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://111.229.4.194:3307/order_0
+        url: jdbc:mysql://${spring.shardingsphere.host}:3307/order_0
       ds1:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://111.229.4.194:3308/order_0
+        url: jdbc:mysql://${spring.shardingsphere.host}:4306/order_0
       ds1-slave:
         username: root
         password: tiger
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://111.229.4.194:3309/order_0
-#      names: ds0,ds0-slave,ds1
+        url: jdbc:mysql://${spring.shardingsphere.host}:4307/order_0
+      # 配置数据源名称
       names: ds0,ds0-slave,ds1,ds1-slave
     sharding:
       default-database-strategy:

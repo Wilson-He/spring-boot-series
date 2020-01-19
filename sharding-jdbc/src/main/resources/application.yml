@@ -5,11 +5,10 @@ spring:
     serialization:
       longToString: true
   profiles:
-    include: jdbc
-  jackson:
-    default-property-inclusion: always
+    include: sharding
 swagger:
-  dockets:
+  docket:
+    base-package: io.wilson.sharding.controller
 mybatis-plus:
   configuration:
     default-scripting-language: io.wilson.sharding.mybatis.ExtMybatisXMLLanguageDriver
