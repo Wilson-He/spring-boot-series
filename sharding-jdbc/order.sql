@@ -1,11 +1,7 @@
 create database order_0;
 create database order_1;
-create database order_slave_0;
-create database order_slave_1;
 use order_0;
 # use order_1;
-# use order_slave_0;
-# use order_slave_1;
 
 drop table if exists order_info;
 create table order_info
