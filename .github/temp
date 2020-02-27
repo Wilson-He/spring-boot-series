@@ -1,0 +1,21 @@
+# admin-service、admin-service
+/usr/lib/jvm/java-1.8-openjdk/jre/bin/java \
+ -Dsun.misc.URLClassPath.disableJarChecking=true \
+ -Denv=dev -Dspring.profiles.active=github \
+ -Deureka.service.url=http://111.229.4.194:8080/eureka/ \
+ -Dlogging.file=./apollo-service.log \
+ -Dspring.datasource.url=jdbc:mysql://apollo-db:3306/ApolloConfigDB?characterEncoding=utf8 \
+ -Dspring.datasource.username=root \
+ -Deureka.instance.ip-address=http://111.229.4.194 \
+ -Dspring.datasource.password= -jar /apollo-quick-start/service/apollo-service.jar --configservice --adminservice
+
+# portal
+/usr/lib/jvm/java-1.8-openjdk/jre/bin/java \
+-Dsun.misc.URLClassPath.disableJarChecking=true \
+-Denv=dev -Ddev_meta=http://111.229.4.194:8080 \
+-Dspring.profiles.active=github,auth \
+-Deureka.client.enabled=false -Dhibernate.query.plan_cache_max_size=192 \
+-Dlogging.file=./apollo-portal.log -Dserver.port=8070  \
+-Dspring.datasource.url=jdbc:mysql://apollo-db:3306/ApolloPortalDB?characterEncoding=utf8 \
+-Dspring.datasource.username=root \
+-Dspring.datasource.password= -jar /apollo-quick-start/portal/apollo-portal.jar --portal

@@ -1,5 +1,6 @@
 package io.cloud.consumer.listener;
 
+import io.rocket.common.model.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
@@ -13,9 +14,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RocketMQMessageListener(consumerGroup = "${rocketmq.consumer-group.user}", topic = "${rocketmq.topic.user}")
 @Service
-public class UserRocketMQListener implements RocketMQListener<MessageExt> {
+public class UserRocketMQListener implements RocketMQListener<UserInfo> {
     @Override
-    public void onMessage(MessageExt message) {
-        log.info("user msg id: {}, payload: {}", message.getMsgId(), new String(message.getBody()));
+    public void onMessage(UserInfo userInfo) {
+        log.info("receive user: {}", userInfo);
     }
 }

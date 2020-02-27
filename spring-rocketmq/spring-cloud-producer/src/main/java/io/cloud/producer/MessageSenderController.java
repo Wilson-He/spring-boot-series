@@ -1,5 +1,6 @@
 package io.cloud.producer;
 
+import io.rocket.common.model.UserInfo;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.support.MessageBuilder;
@@ -26,8 +27,8 @@ public class MessageSenderController {
     private String orderTopic;
 
     @GetMapping("/user")
-    public String sendUser(@RequestParam String msg) {
-        rocketMQTemplate.send(userTopic, MessageBuilder.withPayload(msg).build());
+    public String sendUser(@RequestParam String name) {
+        rocketMQTemplate.send(userTopic, MessageBuilder.withPayload(new UserInfo().setId("1").setName(name)).build());
         return "send user success";
     }
 
