@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>generator-maven-plugin</artifactId>
-                <version>0.2.4</version>
+                <version>0.2.5</version>
                 <configuration>
                     <basePackage>io.wilson.sharding</basePackage>
                     <dataSource>
@@ -77,7 +77,6 @@
                     </templates>
                     <crudIdType>Long</crudIdType>
                     <!-- 只生成表order_info的实体类 -->
-                    <inclusions>order_info</inclusions>
                 </configuration>
             </plugin>
         </plugins>

@@ -13,6 +13,9 @@ spring:
       preferred-json-mapper: jackson
   profiles:
     active: dev
+  common:
+    validation:
+      msg-locale: zh_CN
 
 mybatis-plus:
   global-config:
@@ -21,3 +24,4 @@ mybatis-plus:
 swagger:
   docket:
     base-package: io.github.test.controller
+

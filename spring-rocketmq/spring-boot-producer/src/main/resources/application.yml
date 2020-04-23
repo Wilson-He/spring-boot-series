@@ -2,5 +2,10 @@ rocketmq:
   name-server: 127.0.0.1:9876
   producer:
     group: spring-boot-producer
+    max-message-size: 30
 server:
   port: 9990
+
+swagger:
+  docket:
+    base-package: io.github.rocket

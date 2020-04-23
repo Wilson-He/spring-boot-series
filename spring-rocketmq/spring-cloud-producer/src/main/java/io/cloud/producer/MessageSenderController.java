@@ -1,6 +1,6 @@
 package io.cloud.producer;
 
-import io.rocket.common.model.UserInfo;
+import io.rocket.common.domain.entity.UserInfo;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.support.MessageBuilder;

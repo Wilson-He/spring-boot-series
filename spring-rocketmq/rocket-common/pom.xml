@@ -11,5 +11,32 @@
 
     <artifactId>rocket-common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.wilson-he</groupId>
+            <artifactId>spring-boot-mybatis-plus-demo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.wilson-he</groupId>
+                <artifactId>generator-maven-plugin</artifactId>
+                <version>0.2.6</version>
+                <configuration>
+                    <basePackage>io.rocket.common</basePackage>
+                    <dataSource>
+                        <url>jdbc:mysql://localhost:3306/wilson</url>
+                        <username>root</username>
+                        <password>tiger</password>
+                    </dataSource>
+                    <useSwagger>true</useSwagger>
+                    <inclusions>praise_record</inclusions>
+                    <crudIdType>Long</crudIdType>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

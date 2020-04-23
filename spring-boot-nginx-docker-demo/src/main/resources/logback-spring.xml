@@ -13,7 +13,7 @@
     <property name="CONSOLE_LOG_PATTERN"
               value="%date{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %([%thread])  %cyan(%logger) : %msg%n"/>
 
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="org.apache.rocketmq.console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <charset>UTF-8</charset>
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
@@ -106,7 +106,7 @@
    -->
     <springProfile name="default">
         <root level="info">
-            <appender-ref ref="console"/>
+            <appender-ref ref="org.apache.rocketmq.console"/>
             <appender-ref ref="info"/>
             <appender-ref ref="error"/>
         </root>

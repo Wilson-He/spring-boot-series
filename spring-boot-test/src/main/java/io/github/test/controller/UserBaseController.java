@@ -1,6 +1,8 @@
 package io.github.test.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.github.test.domain.entity.UserBase;
 import io.github.test.service.UserBaseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +32,8 @@ public class UserBaseController {
 
     @GetMapping("/")
     public String index() {
+        userBaseService.list(new LambdaQueryWrapper<UserBase>()
+                .eq(UserBase::getId, 1).or(condition -> condition.eq(UserBase::getStatus, 1).eq(UserBase::getIsDelete, 0)));
         return "index";
     }
 

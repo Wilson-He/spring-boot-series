@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
  **/
 @Slf4j
 @RocketMQMessageListener(consumerGroup = RocketConstant.ConsumerGroup.SPRING_BOOT_CONSUMER, topic = RocketConstant.Topic.SPRING_BOOT_TOPIC)
-@Service
-public class ConsumerListener implements RocketMQListener<MessageExt> {
+//@Service
+public class StringConsumerListener implements RocketMQListener<MessageExt> {
+
     @Override
-    public void onMessage(MessageExt message) {
-        log.info("msg id: {}, payload: {}", message.getMsgId(), new String(message.getBody()));
+    public void onMessage(MessageExt messageExt) {
+        log.info("receive message: {}, queue: {}", new String(messageExt.getBody()), messageExt.getQueueId());
     }
 }

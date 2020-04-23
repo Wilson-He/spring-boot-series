@@ -1,0 +1,18 @@
+#app:
+#  id: web-demo
+#apollo:
+#  meta: http://111.229.4.194:8080
+##  configService: http://111.229.4.194:8080
+#  cachedir: E:/IntelliJ/workspace/spring-boot-series/cache
+#  bootstrap:
+#    enabled: true
+#    namespaces: application
+#    eagerLoad:
+#spring:
+#  profiles:
+#    include: common
+#      enabled: true
+
+spring:
+  profiles:
+    include: datasource

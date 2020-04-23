@@ -7,7 +7,6 @@ import io.github.test.mapper.UserBaseMapper;
 import io.github.test.service.ProductService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 /**
@@ -25,9 +24,4 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Resource
     private UserBaseMapper userBaseMapper;
 
-    @PostConstruct
-    public void init() {
-        productMapper.deleteById(1);
-        userBaseMapper.deleteById(1);
-    }
 }

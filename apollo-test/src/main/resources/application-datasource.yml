@@ -1,0 +1,5 @@
+datasource:
+  url: test-url
+  username: wilson
+  password: test-password
+  driver: ${db.driver:com.mysql.jdbc.Drivera}
