@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: mybatis-plus-dynamic-datasource
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    dynamic:
+      primary: wilson
+      datasource:
+        wilson:
+          url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: tiger
+        market_user:
+          url: jdbc:mysql://localhost:3306/market_user?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: tiger
+swagger:
+  docket:
+    base-package: io.wilson.dynamic.controller
+
+
+
+logging:
+  level:
+    io.wilson.dynamic.mapper: debug

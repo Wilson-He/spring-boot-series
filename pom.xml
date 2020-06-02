@@ -15,7 +15,6 @@
         <module>spring-boot-test</module>
         <module>spring-cloud-eureka</module>
         <module>spring-boot-validation-demo</module>
-        <module>spring-mybatis-plus-ds</module>
         <module>spring-boot-data-mongodb-demo</module>
         <module>spring-rocketmq</module>
         <module>spring-boot-jwt-redis</module>
@@ -26,6 +25,7 @@
         <module>sharding-jdbc</module>
         <module>docker-integration</module>
         <module>apollo-test</module>
+        <module>spring-boot-dynamic-datasource-demo</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -57,19 +57,18 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>spring-boot-common</artifactId>
-            <version>0.0.4</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>swagger2-spring-boot-starter</artifactId>
-            <version>1.1.0</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.github.wilson-he</groupId>
+                <artifactId>spring-boot-common</artifactId>
+                <version>0.0.4</version>
+            </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>

@@ -1,18 +1,13 @@
 package io.mybatis.plus.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.mybatis.plus.domain.constant.UserBaseConstant;
-
-import java.util.Objects;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * <p>
@@ -42,6 +37,7 @@ public class UserBase implements Serializable {
      * 状态(ENABLE:启用,DISABLE:禁用)
      */
     private String status;
+    private State state;
 
     public String getIsDeleteComment() {
         return UserBaseConstant.IsDelete.comment(this.isDelete);

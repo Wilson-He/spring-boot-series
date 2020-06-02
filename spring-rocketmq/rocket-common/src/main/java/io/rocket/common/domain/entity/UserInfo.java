@@ -14,7 +14,9 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 public class UserInfo {
+    private static final int SYMBOL = 1;
     private Integer id;
     private String name;
 }

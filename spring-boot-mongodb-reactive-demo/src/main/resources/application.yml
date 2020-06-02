@@ -2,7 +2,15 @@ spring:
   data:
     mongodb:
       database: test
+      auto-index-creation: true
+#      uri: mongodb://localhost/test
+#      host: localhost
+#      port: 27017
+#      field-naming-strategy:
 #swagger:
 #  enabled: true
 #  docket:
 #    base-package: io.github
+logging:
+  level:
+    org.springframework.data.mongodb: trace

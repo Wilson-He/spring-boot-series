@@ -11,6 +11,7 @@ import reactor.test.StepVerifier;
 import java.time.Duration;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 /**
  * @author: Wilson
@@ -22,7 +23,37 @@ public class ReactiveDemo {
 //        zip();
 //        testSyncToAsync();
 //        retry();
-        subscribe();
+//        subscribe();
+        printThread();
+//        say("hello").subscribe();
+        Thread.sleep(5000);
+    }
+
+    public static Mono<String> say(String name) {
+        return Mono.just(name)
+//                .publishOn(Schedulers.elastic())
+                .map(ReactiveDemo::hello);
+    }
+
+    private static String hello(String name) {
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+
+        }
+        String result = String.format("hello %s, current-thread is [%s]", name, Thread.currentThread().getName());
+        System.out.println(result);
+        return result;
+    }
+
+    private static void printThread() throws InterruptedException {
+        Flux.fromStream(Stream.of(1, 2, 3, 4, 5))
+                .publishOn(Schedulers.elastic())
+                .flatMap(integer -> Mono.just(hello(String.valueOf(integer))))
+                .map(integer -> Mono.just(hello(String.valueOf(integer))))
+                .subscribe(e -> System.out.println(Thread.currentThread().getName()));
+        Thread.sleep(5000);
+        // 确保序列执行完
     }
 
     private static void subscribe() throws InterruptedException {

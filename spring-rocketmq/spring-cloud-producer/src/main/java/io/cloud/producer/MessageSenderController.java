@@ -28,7 +28,7 @@ public class MessageSenderController {
 
     @GetMapping("/user")
     public String sendUser(@RequestParam String name) {
-        rocketMQTemplate.send(userTopic, MessageBuilder.withPayload(new UserInfo().setId("1").setName(name)).build());
+        rocketMQTemplate.send(userTopic, MessageBuilder.withPayload(new UserInfo().setId(1).setName(name)).build());
         return "send user success";
     }
 
