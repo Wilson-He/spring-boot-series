@@ -26,6 +26,7 @@
         <module>docker-integration</module>
         <module>apollo-test</module>
         <module>spring-boot-dynamic-datasource-demo</module>
+        <module>java-basic</module>
     </modules>
     <packaging>pom</packaging>
 

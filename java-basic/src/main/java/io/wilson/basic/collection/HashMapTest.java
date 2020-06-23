@@ -1,31 +1,22 @@
-package io.github.test;
+package io.wilson.basic.collection;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Sets;
-import io.github.test.model.UserVO;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
  * @author ex_hewx
- * @date 2020/5/25
+ * @date 2020/6/3
  */
 public class HashMapTest {
 
     public static void main(String[] args) throws Exception {
-        System.out.println((double) 11 / 60);
-//        LocalDateTime now = LocalDateTime.now();
-//        LocalDateTime nextHour = LocalDateTime.now().plusMinutes(84);
-//        now = now.plusSeconds(10);
-//        System.out.println(Duration.between(now, nextHour).toMinutes());
-//        stringKey();
+        stringKey();
     }
 
     public static void stringKey() throws NoSuchFieldException, IllegalAccessException {
@@ -62,16 +53,6 @@ public class HashMapTest {
         System.out.println("table:  " + JSONObject.toJSONString(table));
         System.out.println("evict null table: " + tableString);
         System.out.println("entrySet: " + sets);
-
-          /*      System.out.println("map.size:" + map.size() + ", table node count: " + notNullCount + ", entrySet size: " + sets.size() + ", node classes: " + nodeClasses);
-        map.remove("30lG");
-        map.remove("31MG");
-        map.remove("30kf");
-        map.remove("1oLf");
-        nodeClasses = Arrays.stream(table)
-                .filter(Objects::nonNull)
-                .map(Object::getClass)
-                .collect(Collectors.toSet());*/
     }
 
     /**
