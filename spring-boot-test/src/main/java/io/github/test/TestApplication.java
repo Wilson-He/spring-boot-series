@@ -8,8 +8,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Field;
 import java.util.*;
@@ -32,6 +34,4 @@ public class TestApplication {
     public static void main(String[] args) {
         SpringApplication.run(TestApplication.class, args);
     }
-
-
 }

@@ -1,10 +1,13 @@
 package io.github.test.controller;
 
 
+import com.google.common.collect.Lists;
 import io.github.test.domain.entity.UserBase;
 import io.github.test.model.UserVO;
+import io.springframework.common.response.ServerResponse;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +37,8 @@ public class TestController {
     private Validator validator;
     @Resource
     private HttpServletRequest request;
+    @Resource
+    private RestTemplate restTemplate;
 
     @PostMapping("/")
     public Object add(@RequestBody UserBase userBase) {
@@ -47,6 +52,15 @@ public class TestController {
     public String get() {
         validate(new UserVO());
         return "index";
+    }
+
+
+    @GetMapping("/rest")
+    public ServerResponse rest() {
+        List<Long> arrays = Lists.newArrayList(4885L, 4889L);
+        String result = restTemplate.exchange("http://10.16.88.42/midea-uom-gateway/new-live/api/external/liveConfig/listStatusByIds", HttpMethod.POST, new HttpEntity<>(arrays), String.class)
+                .getBody();
+        return ServerResponse.success(result);
     }
 
     @PostMapping("/user")
