@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    gateway:
+      enabled: true

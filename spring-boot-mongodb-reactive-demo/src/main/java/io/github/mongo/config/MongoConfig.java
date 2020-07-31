@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/4/24
  */
 //@Configuration

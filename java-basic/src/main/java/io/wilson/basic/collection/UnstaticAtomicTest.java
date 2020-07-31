@@ -3,7 +3,7 @@ package io.wilson.basic.collection;
 import java.util.stream.IntStream;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/6/4
  */
 public class UnstaticAtomicTest {

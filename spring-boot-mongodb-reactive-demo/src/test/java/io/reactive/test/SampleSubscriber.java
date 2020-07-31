@@ -4,7 +4,7 @@ import org.reactivestreams.Subscription;
 import reactor.core.publisher.BaseSubscriber;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/4/30
  */
 public class SampleSubscriber<T> extends BaseSubscriber<T> {

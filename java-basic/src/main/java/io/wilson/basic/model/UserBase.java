@@ -3,7 +3,7 @@ package io.wilson.basic.model;
 import lombok.*;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/7/20
  */
 @AllArgsConstructor

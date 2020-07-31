@@ -27,6 +27,7 @@
         <module>apollo-test</module>
         <module>spring-boot-dynamic-datasource-demo</module>
         <module>java-basic</module>
+        <module>spring-cloud-gateway-demo</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -44,6 +45,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-cloud.version>Hoxton.SR2</spring-cloud.version>
+        <spring-cloud-number.version>2.2.1.RELEASE</spring-cloud-number.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-data.version>1.4.6.RELEASE</spring-data.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>

@@ -1,16 +1,16 @@
 package io.wilson.basic;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/7/17
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class IntegerVO {
     private int val;
 }

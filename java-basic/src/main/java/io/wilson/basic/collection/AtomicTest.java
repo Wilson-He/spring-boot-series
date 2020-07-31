@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 /**
  * 原子性测试
  *
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/6/4
  */
 public class AtomicTest {

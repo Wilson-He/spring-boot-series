@@ -1,7 +1,7 @@
 package io.wilson.basic.collection;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/6/3
  */
 public class CopyOnWriteArrayListTest {

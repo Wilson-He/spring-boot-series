@@ -5,7 +5,7 @@ import org.springframework.beans.BeanUtils;
 import java.util.function.Supplier;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/4/24
  */
 public class BaseVO {

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Consumer;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/6/4
  */
 public class CustomArray<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable {

@@ -6,7 +6,7 @@ import org.openjdk.jol.vm.VM;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author ex_hewx
+ * @author Wilson-He
  * @date 2020/7/14
  */
 public class ObjectLayoutTest {
