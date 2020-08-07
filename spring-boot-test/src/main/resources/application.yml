@@ -16,6 +16,8 @@ spring:
   common:
     validation:
       msg-locale: zh_CN
+  application:
+    name: test
 
 mybatis-plus:
   global-config:
@@ -24,4 +26,6 @@ mybatis-plus:
 swagger:
   docket:
     base-package: io.github.test.controller
+
+
 

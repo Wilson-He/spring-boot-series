@@ -1,22 +1,16 @@
 package io.github.test;
 
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.collect.Sets;
-import io.github.test.model.UserVO;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
+import io.springframework.common.response.ServerResponse;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.lang.reflect.Field;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 
 /**
  * @author: Wilson
@@ -25,10 +19,20 @@ import java.util.stream.IntStream;
 @SpringBootApplication
 @MapperScan("io.github.test.mapper")
 @RestController
+@EnableDiscoveryClient
 public class TestApplication {
+    @Resource
+    private HttpServletRequest request;
+
     @GetMapping("/hello")
-    public String hello() {
-        return "hello";
+    public ServerResponse hello() {
+        System.out.println("/hello");
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String header = headerNames.nextElement();
+            System.out.println(header + ":" + request.getHeader(header));
+        }
+        return ServerResponse.success("/hello");
     }
 
     public static void main(String[] args) {

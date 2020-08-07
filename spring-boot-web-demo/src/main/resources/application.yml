@@ -3,11 +3,27 @@ swagger:
     base-package: io.web.simple
 
 spring:
-  jackson:
-    property-naming-strategy: SNAKE_CASE
-    default-property-inclusion: non_null
-  common:
-    validation:
-      msg-locale: cn
-    serialization:
-      longToString: true
+  task:
+    # 普通任务线程池配置
+    execution:
+      pool:
+        # 线程核心数，不配置则默认1
+        core-size: 5
+        # 不配置则默认使用无界的LinkedBlockingQueue队列，0则使用SynchronousQueue队列
+        # queue-capacity: 0
+        # 线程存活时间，默认60s，可不配
+        # keep-alive: 60s
+        # 是否允许核心线程超时,默认true，这样可以动态增加和缩小池
+        # allow-core-thread-timeout: true
+    # 任务调度线程池配置
+    scheduling:
+      # 线程名前缀,默认"scheduling"
+      thread-name-prefix: scheduled-task-
+      pool:
+        size: 5
+      #shutdown:
+        # 执行程序是否应在shutdown时等待计划的任务完成，不配默认false
+        #await-termination: false
+        # 等待剩余任务完成的最长时间,默认空，即上次任务是否完成不影响下次任务的执行
+        #await-termination-period: 10s
+

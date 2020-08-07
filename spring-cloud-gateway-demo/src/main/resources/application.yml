@@ -1,4 +1,35 @@
+
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          # 启用DiscoveryClient网关集成,通过网关地址与serviceName访问注册中心的service
+          enabled: true
+          # 服务名转小写
+          lower-case-service-id: true
       enabled: true
+      routes:
+      - id: test
+        #
+        uri: lb://test
+        # http://localhost:8001/test/hello
+        predicates:
+        # 请求路径为/test开头的所有请求都转发都服务中心的test服务去处理
+        - Path=/test/**
+  application:
+    name: gateway
+  task:
+    scheduling:
+      pool:
+        size:
+server:
+  port: 8001
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

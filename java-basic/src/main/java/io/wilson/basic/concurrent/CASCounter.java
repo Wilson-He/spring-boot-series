@@ -1,6 +1,5 @@
 package io.wilson.basic.concurrent;
 
-import org.checkerframework.checker.units.qual.C;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -14,8 +13,7 @@ import java.util.stream.IntStream;
  */
 public class CASCounter {
     private Unsafe unsafe;
-    private volatile long val = 0;
-    // 字段val在对象实例内存起始地址的偏移量
+    private volatile long val = 0;// 字段val在对象实例内存起始地址的偏移量
     private long offset;
 
     public static void main(String[] args) throws NoSuchFieldException, InterruptedException {

@@ -55,6 +55,12 @@ public class TestController {
     }
 
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "/test/hello";
+    }
+
+
     @GetMapping("/rest")
     public ServerResponse rest() {
         List<Long> arrays = Lists.newArrayList(4885L, 4889L);
