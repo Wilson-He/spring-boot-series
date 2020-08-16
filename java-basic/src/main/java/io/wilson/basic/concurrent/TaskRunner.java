@@ -18,7 +18,7 @@ public class TaskRunner {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         new Reader().start();
         number = 42;
         ready = true;

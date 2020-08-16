@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class VariableThreadPoolTest {
     static final VariableThreadPoolTest test = new VariableThreadPoolTest();
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) {
         ThreadFactory threadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("thread-%s")
                 // execute()执行过程中出现异常则抛出异常线程及异常信息

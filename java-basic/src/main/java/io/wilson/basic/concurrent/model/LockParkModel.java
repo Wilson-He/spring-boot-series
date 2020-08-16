@@ -1,4 +1,4 @@
-package io.wilson.basic.concurrent;
+package io.wilson.basic.concurrent.model;
 
 import lombok.Data;
 

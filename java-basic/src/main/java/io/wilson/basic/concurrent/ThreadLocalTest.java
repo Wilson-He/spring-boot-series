@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
  * @date 2020/7/30
  */
 public class ThreadLocalTest {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> test("abc", false));
         t.start();
         t.join();

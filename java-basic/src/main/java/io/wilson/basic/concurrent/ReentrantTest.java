@@ -14,11 +14,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantTest {
     private final ReentrantLock FAIR_LOCK = new ReentrantLock(true);
     private final ReentrantLock NONFAIR_LOCK = new ReentrantLock(false);
-    private static final int OPERATION_SECOND = 10;
-    private static final int SET_SECOND = 10;
+    private static final int OPERATION_SECOND = 100;
+    private static final int SET_SECOND = 100;
     private String val;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         ReentrantTest test = new ReentrantTest();
         Thread threadA = new Thread(null, test::nonfairOperation, "threadA");
         Thread threadB = new Thread(null, test::nonfairOperation, "threadB");
@@ -55,7 +55,6 @@ public class ReentrantTest {
 
     public void fairSetVal(String val) {
         FAIR_LOCK.lock();
-        System.out.println(FAIR_LOCK.getHoldCount());
         setVal(val);
         System.out.println("fairSetVal, val:" + val + ", thread:" + Thread.currentThread().getName());
         FAIR_LOCK.unlock();

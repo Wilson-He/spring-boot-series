@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
  * @date 2020/7/22
  */
 public class SynchronizedTest {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         SynCalculate synCalculate = new SynCalculate();
         System.out.println(synCalculate.sum);

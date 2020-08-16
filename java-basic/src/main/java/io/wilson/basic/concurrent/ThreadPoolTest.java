@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
  * @date 2020/7/30
  */
 public class ThreadPoolTest {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
         // 创建线程池工厂设置线程名称格式，execute()任务异常处理器
         ThreadFactory threadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("thread-%s")

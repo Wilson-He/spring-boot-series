@@ -1,5 +1,7 @@
 package io.wilson.basic.concurrent;
 
+import io.wilson.basic.concurrent.model.LockParkModel;
+
 import java.util.concurrent.locks.LockSupport;
 
 /**
