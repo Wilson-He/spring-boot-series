@@ -9,3 +9,4 @@ eureka:
 spring:
   application:
     name: registry-center
+
