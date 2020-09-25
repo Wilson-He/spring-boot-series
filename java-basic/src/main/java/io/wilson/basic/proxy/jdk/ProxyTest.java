@@ -1,5 +1,6 @@
 package io.wilson.basic.proxy.jdk;
 
+import javax.swing.plaf.TableHeaderUI;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
@@ -10,18 +11,13 @@ import java.lang.reflect.Proxy;
  * @date 2020/9/5
  */
 public class ProxyTest {
-    public static void main(String[] args) {
-//        AdvisedSupport advisedSupport = new AdvisedSupport();
-//        advisedSupport.setTarget(fish);
-//        advisedSupport.setInterfaces(Fish.class.getInterfaces());
-//        AopProxy aopProxy =  new DefaultAopProxyFactory()
-//                .createAopProxy(advisedSupport);
-//        System.out.println(aopProxy instanceof SpringProxy);
-//        Animal proxyFish = (Animal) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),fish.getClass().getInterfaces(),animalHandler);
-//        proxyFish.run();
+    public static void main(String[] args) throws InterruptedException {
+        jdkProxy();
     }
 
     private static void jdkProxy(){
+        // 保存代理生成的文件
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
         // 创建代理对象
         Fish fish = new Fish();
         // 实现代理调用处理器接口

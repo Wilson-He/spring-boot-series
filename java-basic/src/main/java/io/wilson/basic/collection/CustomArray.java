@@ -18,22 +18,26 @@ public class CustomArray<E> implements List<E>, RandomAccess, Cloneable, java.io
         this.array = new Object[0];
     }
 
+    @Override
     @SneakyThrows
     public boolean add(E e) {
         final ReentrantLock lock = this.lock;
         lock.lock();
-        Thread.sleep(1000);
-        System.out.println("write thread:" + Thread.currentThread().getId() + " , add: " + e);
         try {
+            Thread.sleep(1000);
+            System.out.println("write thread:" + Thread.currentThread().getId() + " , add: " + e);
             Object[] elements = getArray();
             int len = elements.length;
             Object[] newElements = Arrays.copyOf(elements, len + 1);
             newElements[len] = e;
             setArray(newElements);
             return true;
-        } finally {
+        } catch (Exception ex){
+
+        } finally{
             lock.unlock();
         }
+        return false;
     }
 
     public E[] getArray() {
@@ -47,9 +51,12 @@ public class CustomArray<E> implements List<E>, RandomAccess, Cloneable, java.io
         array = a;
     }
 
+    @Override
     @SneakyThrows
     public void forEach(Consumer<? super E> action) {
-        if (action == null) throw new NullPointerException();
+        if (action == null) {
+            throw new NullPointerException();
+        }
         Object[] elements = getArray();
         int len = elements.length;
         for (int i = 0; i < len; ++i) {
@@ -58,6 +65,7 @@ public class CustomArray<E> implements List<E>, RandomAccess, Cloneable, java.io
         }
     }
 
+    @Override
     public String toString() {
         return Arrays.toString(getArray());
     }
@@ -149,16 +157,16 @@ public class CustomArray<E> implements List<E>, RandomAccess, Cloneable, java.io
     @Override
     public E remove(int index) {
         final ReentrantLock lock = this.lock;
-        lock.lock();
         System.err.println("remove " + index);
+        lock.lock();
         try {
             Object[] elements = getArray();
             int len = elements.length;
             E oldValue = get(elements, index);
             int numMoved = len - index - 1;
-            if (numMoved == 0)
+            if (numMoved == 0) {
                 setArray(Arrays.copyOf(elements, len - 1));
-            else {
+            } else {
                 Object[] newElements = new Object[len - 1];
                 System.arraycopy(elements, 0, newElements, 0, index);
                 System.arraycopy(elements, index + 1, newElements, index,
