@@ -24,6 +24,14 @@ public class AspectApplication {
     private Dog dog;
 
     @GetMapping("/dog")
+    public ServerResponse dog(){
+//        Dog dog = new Dog();
+        dog.cry();
+        System.out.println(dog.getClass().getCanonicalName());
+        return ServerResponse.success();
+    }
+
+    @GetMapping("/dog2")
     public ServerResponse serverResponse(){
 //        Dog dog = new Dog();
         dog.cry();
