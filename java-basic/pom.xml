@@ -54,7 +54,7 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>1.11</version>
@@ -70,14 +70,14 @@
                 <executions>
                     <execution>
                         <goals>
-                            <!-- 对main目录下的类编译时进行编织增强 -->
+                            &lt;!&ndash; 对main目录下的类编译时进行编织增强 &ndash;&gt;
                             <goal>compile</goal>
-                            <!-- 对test目录下的类编译时进行编织增强 -->
+                            &lt;!&ndash; 对test目录下的类编译时进行编织增强 &ndash;&gt;
                             <goal>test-compile</goal>
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

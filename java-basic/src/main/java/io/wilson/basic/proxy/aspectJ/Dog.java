@@ -1,5 +1,8 @@
 package io.wilson.basic.proxy.aspectJ;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dog {
 
     @LogAspect

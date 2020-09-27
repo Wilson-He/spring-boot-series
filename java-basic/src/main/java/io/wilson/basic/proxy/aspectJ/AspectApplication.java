@@ -27,7 +27,7 @@ public class AspectApplication {
     public ServerResponse serverResponse(){
 //        Dog dog = new Dog();
         dog.cry();
-        System.out.println(dog.getClass());
+        System.out.println(dog.getClass().getCanonicalName());
         return ServerResponse.success();
     }
 }

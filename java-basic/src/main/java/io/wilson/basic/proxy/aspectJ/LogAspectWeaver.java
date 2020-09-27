@@ -4,11 +4,13 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Wilson
  */
 @Aspect
+@Component
 public class LogAspectWeaver {
 
     @Pointcut("@annotation(io.wilson.basic.proxy.aspectJ.LogAspect) && execution(* io.wilson.basic.proxy.aspectJ..*(..))")
