@@ -1,0 +1,18 @@
+syntax = 'proto3';
+
+package io.wilson.grpc.common.message;
+
+message EmailMessage{
+  string from = 1;
+  repeated string to = 2;
+  string content = 3;
+}
+
+message RpcResponse{
+  int32 code = 1;
+  string msg = 2;
+}
+
+service EmailMessageService{
+  rpc sendEmail(EmailMessage) returns (RpcResponse);
+}

@@ -48,7 +48,7 @@
             <plugin>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>generator-maven-plugin</artifactId>
-                <version>0.2.7</version>
+                <version>0.2.6</version>
                 <configuration>
                     <basePackage>io.wilson.dynamic</basePackage>
                     <dataSource>

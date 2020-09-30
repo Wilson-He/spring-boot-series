@@ -1,0 +1,9 @@
+syntax = 'proto3';
+
+package io.wilson.grpc.common.message;
+
+message SmsMessage{
+  string from = 1;
+  string to = 2;
+  string content = 3;
+}
