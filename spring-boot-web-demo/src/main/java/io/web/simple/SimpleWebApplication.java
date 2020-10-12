@@ -21,16 +21,10 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 // @EnableScheduling
 public class SimpleWebApplication {
-    @Resource
-    private ThreadPoolTaskExecutor executor;
-    @Resource
-    private ThreadPoolTaskScheduler scheduler;
 
     @PostConstruct
     public void init() {
         // 每5秒打印一次当前时间
-        scheduler.scheduleAtFixedRate(() -> System.out.println(LocalDateTime.now()),
-                Duration.of(5, ChronoUnit.SECONDS));
     }
 
     public static void main(String[] args) {

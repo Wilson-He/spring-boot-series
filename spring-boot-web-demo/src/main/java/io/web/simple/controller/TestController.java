@@ -1,6 +1,7 @@
 package io.web.simple.controller;
 
 import io.springframework.common.response.ServerResponse;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,8 +19,9 @@ import javax.validation.constraints.Min;
 @RestController
 @RequestMapping("/")
 @Validated
+@Api(tags = "测试控制器")
 @Slf4j
-public class IndexController {
+public class TestController {
     @GetMapping("/index")
     public ServerResponse<String> index() {
         log.info("IndexController index");

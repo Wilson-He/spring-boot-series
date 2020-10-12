@@ -1,6 +1,6 @@
-swagger:
-  docket:
-    base-package: io.web.simple
+#swagger:
+#  docket:
+#    base-package: io.web.simple
 
 spring:
   task:
@@ -16,14 +16,13 @@ spring:
         # 是否允许核心线程超时,默认true，这样可以动态增加和缩小池
         # allow-core-thread-timeout: true
     # 任务调度线程池配置
-    scheduling:
+#    scheduling:
       # 线程名前缀,默认"scheduling"
-      thread-name-prefix: scheduled-task-
-      pool:
-        size: 5
+#      thread-name-prefix: scheduled-task-
+#      pool:
+#        size: 5
       #shutdown:
         # 执行程序是否应在shutdown时等待计划的任务完成，不配默认false
         #await-termination: false
         # 等待剩余任务完成的最长时间,默认空，即上次任务是否完成不影响下次任务的执行
         #await-termination-period: 10s
-

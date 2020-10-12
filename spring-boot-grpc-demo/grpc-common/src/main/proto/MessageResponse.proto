@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package io.wilson.grpc.common.message;
-
-message RpcResponse{
-  int32 code = 1;
-  string msg = 2;
-}

@@ -1,0 +1,17 @@
+//syntax = "proto3";
+//
+////option java_multiple_files = true;
+////option java_package = "io.wilson.grpc.common.service";
+////option java_outer_classname = "HelloWorldService";
+//
+//import "grpc/message/Hello.proto";
+//
+//package grpc.service;
+//
+//// define a service
+//service HelloWorldService {
+//  // define the interface and data type
+//  rpc SayHello (HelloRequest) returns (HelloRequest) {
+//
+//  }
+//}

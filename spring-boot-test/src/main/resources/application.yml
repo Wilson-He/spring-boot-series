@@ -8,9 +8,9 @@ spring:
     username: root
     url: jdbc:mysql://localhost:3306/wilson?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
     name: db-test
-  http:
-    converters:
-      preferred-json-mapper: jackson
+#  http:
+#    converters:
+#      preferred-json-mapper: jackson
   profiles:
     active: dev
   common:
