@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 /**
  * @author Wilson
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "io.wilson.grpc")
 @EnableAsync
 public class GrpcClientApplication {
     public static void main(String[] args) {

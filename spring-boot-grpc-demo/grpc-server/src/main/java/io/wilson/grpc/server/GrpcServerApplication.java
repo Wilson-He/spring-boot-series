@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author Wilson
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "io.wilson.grpc")
 public class GrpcServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(GrpcServerApplication.class, args);

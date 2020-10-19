@@ -26,12 +26,13 @@ public class HelloClientService {
 
             @Override
             public void onError(Throwable t) {
-
+                System.err.println("onError.cause: " + t.getCause());
+                System.err.println("onError.getLocalizedMessage: " + t.getLocalizedMessage());
+                System.err.println("onError.message: " + t.getLocalizedMessage());
             }
 
             @Override
             public void onCompleted() {
-                System.out.println("request finished! ");
             }
         });
     }
