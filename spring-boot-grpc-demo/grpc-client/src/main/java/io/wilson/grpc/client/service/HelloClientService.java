@@ -3,7 +3,7 @@ package io.wilson.grpc.client.service;
 import io.grpc.stub.StreamObserver;
 import io.wilson.grpc.common.message.HelloReply;
 import io.wilson.grpc.common.message.HelloRequest;
-import io.wilson.grpc.common.message.HelloWorldServiceGrpc;
+import io.wilson.grpc.common.service.HelloWorldServiceGrpc;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 
@@ -26,9 +26,7 @@ public class HelloClientService {
 
             @Override
             public void onError(Throwable t) {
-                System.err.println("onError.cause: " + t.getCause());
-                System.err.println("onError.getLocalizedMessage: " + t.getLocalizedMessage());
-                System.err.println("onError.message: " + t.getLocalizedMessage());
+                System.err.println("onError.message: " + t.getMessage());
             }
 
             @Override

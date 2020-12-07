@@ -32,7 +32,6 @@
         <dependency>
             <groupId>io.github.wilson-he</groupId>
             <artifactId>spring-boot-common</artifactId>
-            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>

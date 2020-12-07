@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "io.wilson.grpc.common.service";
+
+import "grpc/message/Hello.proto";
+
+package grpc.service;
+
+// define a service
+service HelloWorldService {
+    // define the interface and data type
+    rpc SayHello (grpc.message.HelloRequest) returns (grpc.message.HelloReply) {
+    }
+}

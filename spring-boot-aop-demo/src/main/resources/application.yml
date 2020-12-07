@@ -1,0 +1,3 @@
+swagger:
+  docket:
+    base-package: io.springboot.aop.demo

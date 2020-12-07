@@ -23,6 +23,8 @@
         <java.version>1.8</java.version>
         <os-maven-plugin.version>1.6.1</os-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <protoc.version>3.13</protoc.version>
+        <grpc.version>1.31.1</grpc.version>
     </properties>
 
     <dependencies>

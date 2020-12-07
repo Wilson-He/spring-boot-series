@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+
+    <!-- 文件输出格式 -->
+    <property name="PATTERN"
+              value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) %-5level [%thread] %c [%L] : %msg%n"/>
+    <!-- log文件路径 -->
+        <property name="LOG_PATH" value="D:/github-repository/spring-boot-series/spring-boot-grpc-demo/grpc-server/log"/>
+<!--    <property name="LOG_PATH" value="E:/IntelliJ/workspace/spring-boot-series/spring-boot-nginx-docker-demo/logs"/>-->
+
+    <!--彩色日志定义-->
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%date{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %([%thread])  %cyan(%logger) : %msg%n"/>
+
+    <appender name="org.apache.rocketmq.console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/info.log</File>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+            <pattern>${PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/info.%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_PATH}/error.log</File>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/error.%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="asyncInfo" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="info"/>
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>512</queueSize>
+        <neverBlock>true</neverBlock>
+    </appender>
+
+    <appender name="asyncError" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="error"/>
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>512</queueSize>
+        <neverBlock>false</neverBlock>
+    </appender>
+
+    <!--json日志记录-->
+    <!--   <appender name="json" class="ch.qos.logback.core.rolling.RollingFileAppender">
+           <File>${LOG_PATH}/json.log</File>
+           <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+               <providers>
+                   <pattern>
+                       <pattern>
+                           {
+                           "host": "${server-ip}:${server-port}",
+                           "app_name": "ecs-application",
+                           "trace_id": "%X{X-B3-TraceId:-}",
+                           "span_id": "%X{X-B3-SpanId:-}",
+                           "export": "%X{X-Span-Export:-}",
+                           "log_date": "%d{yyyy-MM-dd}",
+                           "log_time": "%d{yyyy-MM-dd HH:mm:ss.SSS}",
+                           "level": "%level",
+                           "exception": "%ex",
+                           "thread": "%thread",
+                           "class": "%c",
+                           "line": "%L",
+                           "msg": "%msg"
+                           }
+                       </pattern>
+                   </pattern>
+               </providers>
+           </encoder>
+           <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+               <FileNamePattern>${LOG_PATH}/json.%d{yyyy-MM-dd}.log.zip</FileNamePattern>
+               <MaxHistory>2</MaxHistory>
+           </rollingPolicy>
+       </appender>
+
+       <appender name="asyncJson" class="ch.qos.logback.classic.AsyncAppender">
+           <appender-ref ref="json"/>
+           <discardingThreshold>0</discardingThreshold>
+           <queueSize>512</queueSize>
+           <neverBlock>false</neverBlock>
+       </appender>
+   -->
+    <springProfile name="default">
+        <root level="info">
+            <appender-ref ref="org.apache.rocketmq.console"/>
+            <appender-ref ref="info"/>
+            <appender-ref ref="error"/>
+        </root>
+    </springProfile>
+
+    <!--    <springProfile name="prod">
+            <root level="info">
+                <appender-ref ref="asyncInfo"/>
+                <appender-ref ref="asyncError"/>
+            </root>
+        </springProfile>-->
+</configuration>

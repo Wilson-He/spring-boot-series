@@ -2,7 +2,6 @@ spring:
   application:
     name: grpc-client
 
-
 grpc:
   client:
     grpc-server:

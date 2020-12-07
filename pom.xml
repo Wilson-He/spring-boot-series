@@ -29,6 +29,9 @@
         <module>java-basic</module>
         <module>spring-cloud-gateway-demo</module>
         <module>spring-boot-grpc-demo</module>
+        <module>spring-boot-aop-demo</module>
+        <module>spring-boot-nacos-demo</module>
+        <module>cola</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -50,10 +53,11 @@
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-data.version>1.4.6.RELEASE</spring-data.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
-        <spring-boot-swagger.version>1.1.0</spring-boot-swagger.version>
+        <spring-boot-swagger.version>1.1.2</spring-boot-swagger.version>
         <jwt.version>0.9.0</jwt.version>
         <druid.version>1.1.20</druid.version>
         <spring-boot-grpc.version>2.10.1.RELEASE</spring-boot-grpc.version>
+        <spring-boot-nacos.version>0.2.7</spring-boot-nacos.version>
     </properties>
 
     <dependencies>
@@ -69,6 +73,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>0.2.7</version>
+            </dependency>
             <dependency>
                 <groupId>io.github.wilson-he</groupId>
                 <artifactId>spring-boot-common</artifactId>

@@ -1,6 +1,7 @@
-#swagger:
-#  docket:
-#    base-package: io.web.simple
+swagger:
+  docket:
+    base-package: io.web.simple
+#  enabled: false
 
 spring:
   task:
