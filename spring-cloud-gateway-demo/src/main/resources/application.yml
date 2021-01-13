@@ -19,10 +19,6 @@ spring:
         - Path=/test/**
   application:
     name: gateway
-  task:
-    scheduling:
-      pool:
-        size:
 server:
   port: 8001
 

@@ -1,17 +1,16 @@
-package io.web.simple;
+package io.wilson.flyway;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author Wilson
- * @since 2019/12/17
- **/
+ */
 @SpringBootApplication
-public class SimpleWebApplication {
-
+@MapperScan("io.wilson.flyway.mapper")
+public class FlywayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SimpleWebApplication.class, args);
+        SpringApplication.run(FlywayApplication.class, args);
     }
-
 }

@@ -1,13 +1,13 @@
-nacos:
-  config:
-#    password: nacos
-#    username: nacos
-#    group: OTHER_GROUP
-#    data-id: demo.yml
-    server-addr: 127.0.0.1:8848
-    auto-refresh: true
-    group: DEFAULT_GROUP
-
+#nacos:
+#  config:
+#    server-addr: 127.0.0.1:8848
+#    auto-refresh: true
+#    group: DEFAULT_GROUP
+#    data-id: user-provider.yml
 #swagger:
 #  docket:
 #    base-package: io
+spring:
+  application:
+    name: user-provider
+#        file-extension: yaml

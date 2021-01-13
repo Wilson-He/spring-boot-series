@@ -5,16 +5,27 @@ import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.alibaba.nacos.client.config.NacosConfigService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author Wilson
  */
 @RestController
 @RequestMapping("/nacos")
+@RefreshScope
 public class NacosController {
-    @Value("${swagger.docket.base-package}")
-    private String basePackage;
+    //@Value("${swagger.docket.base-package}")
+    //private String basePackage;
+    @Value("${author.name}")
+    private String name;
+
+    @PostConstruct
+    public void init() {
+        System.err.println("name:" + name);
+    }
 
     /*@NacosValue("${swagger.docket.base-package}")
     private String basePackage;*/
@@ -31,11 +42,11 @@ public class NacosController {
         return configService.getServerStatus();
     }
 */
-    @GetMapping(value = "/basePackage")
+/*    @GetMapping(value = "/basePackage")
     @ResponseBody
     public String basePackage() {
         return basePackage;
-    }
+    }*/
 
 
    /* @Value("${atuhor}")
