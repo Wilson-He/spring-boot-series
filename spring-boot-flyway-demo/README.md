@@ -33,13 +33,24 @@
 在一次迁移运行中，在所有版本迁移执行之后，可重复迁移在最后执行。可重复迁移按照它们描述的顺序执行。  
 
 Flyway迁移的命名模式如下：  
-![flyway-name-mole](https://knowledge-pictures.oss-cn-beijing.aliyuncs.com/spring-boot/flyway.png)
+![flyway-mole](https://img-blog.csdnimg.cn/20210113143311791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3oyODEyNjMwOA==,size_16,color_FFFFFF,t_70)
+
 - 前缀：`V`指版本控制， `U`用于撤消和 `R`用于可重复迁移（可配置）  
 - 版本：带点或下划线的版本可根据需要分隔任意多个部分（不适用于可重复的迁移）  
 - 分隔符：两个下划线`__`（可配置）  
 - 描述：下划线或空格分隔单词  
 
-## Flyway历史记录表
+Flaway的版本命名十分灵活，以下版本都是有效的迭代版本：
+- 1
+- 001
+- 5.2
+- 1.2.3.4.5.6.7.8.9
+- 205.68
+- 20130115113556
+- 2013.1.15.11.35.56
+- 2013.01.15.11.35.56
+
+## Flyway历史记录表`flyway_history_schema`
 Flyway通过创建表`flyway_history_schema`来记录迁移，表中的主要字段如下：  
 
 |   字段名   |   描述   |
@@ -50,15 +61,32 @@ Flyway通过创建表`flyway_history_schema`来记录迁移，表中的主要字
 |   type             | 脚本类型   |
 |   script           | 脚本文件名 |
 |   checksum         | 校验和，用于检测是由有更改    |
-|   installed_by     | 脚本安装人员 |
-|   installed_on     | 安装时间     |
+|   installed_by     | 脚本执行人员 |
+|   installed_on     | 执行时间     |
 |   execution_time   | 执行脚本所耗时间 |
 |   success          | 是否执行成功(0-失败，1成功) |
 
-# 用法示例  
-## Spring Boot集成示例  
+# Spring Boot集成示例  
 
-1.`application.yml`配置数据库连接与sql脚本所在目录(不配则默认为`db/migration`)  
+0.添加所需依赖
+```
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- spring-boot-dependencies已包含了flyway的版本设置 -->
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+```
+
+1.`application.yml`配置数据库连接与sql脚本所在目录(不配则默认为`classpath:db/migration`)  
 ```
 spring:
   datasource:
@@ -124,6 +152,12 @@ alter table user_base modify birthday timestamp null comment '生日';
 alter table user_base add login_time timestamp null;
 ```
 
-4. 启动SpringBoot应用
+4.启动SpringBoot应用，以下为数据库为空SpringBoot应用运行时的执行输出
+![flyway-migration](https://img-blog.csdnimg.cn/20210113135458323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3oyODEyNjMwOA==,size_16,color_FFFFFF,t_70)
+由于配置连接的数据库里没有任何表，所以SpringBoot应用运行时flyway会根据脚本进行数据库的初始化，执行的顺序会根据脚本版本号由低到高按顺序执行(`1.0 -> 1.0.1 -> 1.0.2`)，每执行完一个版本脚本都会向记录表`flyway_history_schema`插入一条数据。
+若添加了新的版本脚本，应用启动时flyway会根据脚本文件版本到记录表`flyway_history_schema`查询是否有对应的版本脚本被执行了，如果没有相应的版本脚本记录才会执行脚本。
 
 
+# 参考
+[官网文档](https://flywaydb.org/documentation/concepts/migrations#overview)
+[示例地址](https://github.com/Wilson-He/spring-boot-series/tree/master/spring-boot-flyway-demo)
