@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: smtp-mail.outlook.com
+    # your outlook username
+    username: username
+    # your outlook password, not authorization code
+    password: password
+    port: 587
+    file-path-prefix: D:/github-repository/spring-boot-series/log
+    properties:
+      mail.smtp.starttls.enable: true
+      mail.smtp.auth: true

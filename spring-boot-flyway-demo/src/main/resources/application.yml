@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_boot_series?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT
+    url: jdbc:mysql://183.56.194.60:3306/spring_boot_series?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT
     username: root
     password: ~Qq199500
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -8,5 +8,6 @@ spring:
   flyway:
     # 版本迁移位置
     locations: classpath:db
+    baseline-version: 1.0.2
 
 

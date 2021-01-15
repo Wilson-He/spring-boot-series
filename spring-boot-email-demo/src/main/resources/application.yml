@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    include: outlook
+swagger:
+  enabled: true
