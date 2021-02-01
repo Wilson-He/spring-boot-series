@@ -1,6 +1,7 @@
 package io.wilson.sharding.controller;
 
 import io.springframework.common.response.ServerResponse;
+import io.springframework.common.validation.group.InsertGroup;
 import io.wilson.sharding.service.OrderInfoService;
 import io.wilson.sharding.vo.OrderVO;
 import org.springframework.validation.annotation.Validated;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * <p>
@@ -25,12 +27,12 @@ public class OrderInfoController {
     private OrderInfoService orderInfoService;
 
     @PostMapping("/")
-    public ServerResponse add(@Validated @RequestBody OrderVO vo) {
+    public ServerResponse add(@Validated(InsertGroup.class) @RequestBody OrderVO vo) {
         return ServerResponse.success(orderInfoService.insert(vo.orderInfo()));
     }
 
     @PutMapping("/")
-    public ServerResponse update(@Validated @RequestBody OrderVO vo) {
+    public ServerResponse update(@Valid @RequestBody OrderVO vo) {
         return ServerResponse.success(orderInfoService.updateById(vo.orderInfo()));
     }
 

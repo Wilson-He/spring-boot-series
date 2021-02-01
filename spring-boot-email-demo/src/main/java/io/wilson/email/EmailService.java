@@ -67,10 +67,9 @@ public class EmailService {
 
     public void sendAttachmentMail(String subject, String content, String fileLocation, String... recipients) throws MessagingException, IOException {
         MimeMessage message = buildMessage(subject, recipients);
-        PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
         String filePath = pathPrefix + fileLocation;
+        System.err.println(filePath);
         File file = new File(filePath);
-        //Resource resource = patternResolver.getResource(fileLocation);
         MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
         messageHelper.setText(content, true);
         messageHelper.addAttachment(Objects.requireNonNull(file.getName()), file);

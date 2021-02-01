@@ -28,6 +28,6 @@ public class EmailController {
                                             @RequestParam String filePath,
                                             @RequestParam String content) throws IOException, MessagingException {
         emailService.sendAttachmentMail(subject, content, filePath, recipient);
-        return ServerResponse.success();
+        return ServerResponse.success("ok");
     }
 }

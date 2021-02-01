@@ -1,5 +1,9 @@
 spring:
   profiles:
     include: outlook
+  task:
+    scheduling:
+      pool:
+        size: 4
 swagger:
   enabled: true

@@ -3,6 +3,7 @@ package io.github.jackson.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.jackson.vo.CompanyVO;
+import io.github.jackson.vo.UserBase;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -28,5 +29,11 @@ public class CompanyController {
     public String objectToJson() throws JsonProcessingException {
         // 使用jackson的objectMapper将对象根据SNAKE_CASE策略转成json字符串
         return objectMapper.writeValueAsString(new CompanyVO().setCompanyName("company").setEmployeeNum(11));
+    }
+
+    @GetMapping("/user")
+    public UserBase user() throws JsonProcessingException {
+        // 使用jackson的objectMapper将对象根据SNAKE_CASE策略转成json字符串
+        return new UserBase(1L, null);
     }
 }

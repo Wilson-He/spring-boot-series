@@ -1,11 +1,8 @@
 package io.wilson.sharding.vo;
 
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.springframework.common.utils.ObjectUtils;
-import io.springframework.common.validation.group.InsertGroup;
-import io.springframework.common.validation.group.UpdateGroup;
-import io.swagger.annotations.ApiModelProperty;
+import io.springframework.common.validation.InsertGroup;
+import io.springframework.common.validation.UpdateGroup;
 import io.wilson.sharding.domain.OrderInfo;
 import lombok.Data;
 
