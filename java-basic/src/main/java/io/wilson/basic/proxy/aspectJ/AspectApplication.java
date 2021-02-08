@@ -28,7 +28,7 @@ public class AspectApplication {
 //        Dog dog = new Dog();
         dog.cry();
         System.out.println(dog.getClass().getCanonicalName());
-        return ServerResponse.success();
+        return ServerResponse.success(null);
     }
 
     @GetMapping("/dog2")
@@ -36,6 +36,6 @@ public class AspectApplication {
 //        Dog dog = new Dog();
         dog.cry();
         System.out.println(dog.getClass().getCanonicalName());
-        return ServerResponse.success();
+        return ServerResponse.success(null);
     }
 }
